@@ -1,4 +1,4 @@
-import { IoAlertCircleOutline } from "react-icons/io5";
+import { IoAlertCircleOutline, IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import { useState } from "react";
 
 const users = [
@@ -238,9 +238,9 @@ const Users = () => {
       <div className="flex flex-wrap items-center justify-center mt-6 gap-2">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          className="px-4 py-2 bg-[#3B9C79] text-white rounded"
+          className="px-4 py-2 bg-[#3B9C79] text-white rounded flex items-center gap-3"
         >
-          &lt; Back
+          <IoChevronBackOutline /> Back
         </button>
 
         {renderPageNumbers()}
@@ -249,9 +249,9 @@ const Users = () => {
           onClick={() =>
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
-          className="px-4 py-2 bg-[#3B9C79] text-white rounded"
+          className="px-4 py-2 bg-[#3B9C79] text-white rounded flex items-center gap-3"
         >
-          Next &gt;
+          Next <IoChevronForwardOutline />
         </button>
 
         {/* Page input */}
