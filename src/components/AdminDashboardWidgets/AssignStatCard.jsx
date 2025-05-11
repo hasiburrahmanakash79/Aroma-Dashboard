@@ -3,8 +3,6 @@
 const AssignStatCard = ({ data }) => {
     return (
       <div className="border border-base-300 p-4 rounded-2xl shadow flex flex-col">
-        <h4 className="text-gray-500 text-sm">All Assign</h4>
-        <div className="divider"></div>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h5 className="text-gray-700">Teacher</h5>

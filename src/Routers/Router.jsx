@@ -3,9 +3,9 @@ import Signup from "../Pages/Authentication/Signup";
 import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
-import AdminHome from "../Pages/Dashboards/AdminDashboard/AdminHome";
-import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
+import Overview from "../Pages/Dashboards/Overview/Overview";
+import Users from "../Pages/Dashboards/Users/Users";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <AdminHome />,
+        element: <Overview />,
       },
       {
-        path: "/upgrade",
-        element: <UpgradePage/>,
+        path: "/user",
+        element: <Users />,
       },
       {
         path: "/profile",
