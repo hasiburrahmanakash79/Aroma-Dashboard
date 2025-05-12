@@ -1,8 +1,13 @@
 import { useState } from "react";
 import oils from "./oils"; // your oil data
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
+import CommonBar from "../../../components/Common/CommonBar";
 
 const Oil = () => {
+
+  const location = useLocation();
+  const currentRoute = location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -62,6 +67,7 @@ const Oil = () => {
   };
   return (
     <div className="p-4">
+      <CommonBar  currentRoute={currentRoute} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {paginatedOil.map((oil, index) => (
           <div

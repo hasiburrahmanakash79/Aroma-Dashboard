@@ -1,5 +1,5 @@
 import logo from "../assets/logo/aroma_logo.png";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"; // Import useLocation
+import { Link, Outlet } from "react-router-dom"; // Import useLocation
 import { RiUserLine, RiSettings4Line } from "react-icons/ri";
 import {
   FaRegChessQueen,
@@ -11,19 +11,17 @@ import { GiBowlOfRice } from "react-icons/gi";
 import { GoMegaphone } from "react-icons/go";
 import { SiGooglenews } from "react-icons/si";
 import { PiGraduationCapLight } from "react-icons/pi";
-import { IoNotificationsOutline, IoArrowBackOutline } from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { MdHomeWork } from "react-icons/md";
 import { IconContext } from "react-icons";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
+
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const currentRoute =
-    location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
+
 
   const handleLogout = () => {
     Swal.fire({
@@ -236,8 +234,10 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-        <div className="flex items-center gap-2 text-gray-700 font-medium text-lg mb-4">
-          <button
+        {/* <CommonBar currentRoute={currentRoute} /> */}
+        {/* <div className="flex items-center justify-between gap-2 text-gray-700 font-medium text-lg  mb-4">
+          <div>
+            <button
             onClick={() => navigate(-1)}
             className="hover:bg-gray-200 p-2 rounded-full transition"
             title="Go back"
@@ -247,7 +247,12 @@ const Dashboard = () => {
           <span className="capitalize text-2xl font-semibold">
             {currentRoute.replace(/-/g, " ")}
           </span>
-        </div>
+          </div>
+          <div className="flex mr-4 ">
+            <button  className="px-6 py-2 rounded-xl text-white bg-green-500 cursor-pointer">Add {currentRoute.replace(/-/g, " ")}</button>
+          </div>
+        </div> */}
+        
         <Outlet />
       </div>
     </div>
