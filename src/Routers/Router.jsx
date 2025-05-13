@@ -24,6 +24,7 @@ import ProfileInformation from "../Pages/Dashboards/Setting/ProfileInfo";
 import TermsCondition from "../Pages/Dashboards/Setting/TermsCondition";
 import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
 import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
+import ResetPass from "../Pages/Authentication/ResetPass";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -127,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: "/otp",
         element: <OtpVerification />,
+      },
+      {
+        path: "/reset_password",
+        element: <ResetPass />,
       },
 ]);
 

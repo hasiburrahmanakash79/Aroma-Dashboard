@@ -1,4 +1,3 @@
-import React from "react";
 
 const CommonModal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;

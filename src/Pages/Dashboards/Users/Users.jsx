@@ -215,6 +215,7 @@ const Users = () => {
               <th className="py-5">Full Name</th>
               <th className="py-5">Email</th>
               <th className="py-5">User Name</th>
+              <th className="py-5">Phone Number</th>
               <th className="py-5">Date</th>
               <th className="py-5">Action</th>
             </tr>
@@ -226,6 +227,7 @@ const Users = () => {
                 <td>{student.fullName}</td>
                 <td>{student.email}</td>
                 <td>{student.username}</td>
+                <td>+9823623987</td>
                 <td>{student.date}</td>
                 <td className="flex justify-center pt-3 text-2xl">
                   <button
