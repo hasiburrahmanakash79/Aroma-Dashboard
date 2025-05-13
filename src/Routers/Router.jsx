@@ -16,6 +16,7 @@ import TransactionHistory from "../Pages/Dashboards/TransactionHistory/Transacti
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
+import UpdatePackageForm from "../Pages/Dashboards/Subscription/UpdatePackageForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/subscription",
         element: <Subscription />,
+      },
+      {
+        path: "/subscription/update/:id",
+        element: <UpdatePackageForm />,
       },
       {
         path: "/history",
