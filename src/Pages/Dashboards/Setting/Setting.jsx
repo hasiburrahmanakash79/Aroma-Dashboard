@@ -24,15 +24,15 @@ const Setting = () => {
             <p>Change Password</p>
             <IoChevronForwardSharp />
           </Link>
-          <Link  className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
+          <Link to='/setting/termsCondition' className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
             <p>Terms & Condition</p>
             <IoChevronForwardSharp />
           </Link>
-          <Link  className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
+          <Link to='/setting/privacy' className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
             <p>Privacy Policy</p>
             <IoChevronForwardSharp />
           </Link>
-          <Link  className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
+          <Link to='/setting/aboutUs' className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
             <p>About Us</p>
             <IoChevronForwardSharp />
           </Link>

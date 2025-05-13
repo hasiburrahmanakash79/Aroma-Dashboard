@@ -3,7 +3,6 @@ import Signup from "../Pages/Authentication/Signup";
 import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
-import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 import Overview from "../Pages/Dashboards/Overview/Overview";
 import Users from "../Pages/Dashboards/Users/Users";
 import Oil from "../Pages/Dashboards/Oil/Oil";
@@ -19,6 +18,9 @@ import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
 import UpdatePackageForm from "../Pages/Dashboards/Subscription/UpdatePackageForm";
 import AddPackage from "../Pages/Dashboards/Subscription/AddPackage";
 import ProfileInfo from "../Pages/Dashboards/Setting/ProfileInfo";
+import TermsCondition from "../Pages/Dashboards/Setting/TermsCondition";
+import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
+import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,6 +85,18 @@ const router = createBrowserRouter([
       {
         path: "/setting/profile",
         element: <ProfileInfo/>,
+      },
+      {
+        path: "/setting/termsCondition",
+        element: <TermsCondition/>,
+      },
+      {
+        path: "/setting/privacy",
+        element: <PrivacyPolicy/>,
+      },
+      {
+        path: "/setting/aboutUs",
+        element: <AboutUs/>,
       },
       
     ],

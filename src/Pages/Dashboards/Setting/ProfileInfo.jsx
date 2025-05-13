@@ -40,7 +40,7 @@ const ProfileInformation = () => {
         )}
       </div>
 
-      <div className="flex flex-col items-center lg:flex-row gap-6 p-5">
+      <div className="flex flex-col items-center lg:flex-row gap-6 py-5 px-20">
         {/* Left (Profile Image & Role) */}
         <div className="w-full lg:w-1/4 flex flex-col items-center border border-gray-300 p-14 rounded-md">
           <img
