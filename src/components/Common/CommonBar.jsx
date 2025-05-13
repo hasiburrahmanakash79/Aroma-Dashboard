@@ -1,9 +1,17 @@
 
 import { IoArrowBackOutline } from 'react-icons/io5'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CommonBar = ({currentRoute}) => {
     const navigate = useNavigate();
+    const getAddButtonPath = () => {
+    return `/${currentRoute.toLowerCase()}/add`;
+  };
+
+  // Get the correct button text
+  const getAddButtonText = () => {
+    return `Add ${currentRoute}`;
+  };
   return (
     <div className="flex items-center justify-between gap-2 text-gray-700 font-medium text-lg  mb-8">
               <div>
@@ -19,7 +27,12 @@ const CommonBar = ({currentRoute}) => {
               </span>
               </div>
               <div className="flex  ">
-                <button  className="px-6 py-2 rounded-xl text-white bg-green-500 cursor-pointer">Add {currentRoute.replace(/-/g, " ")}</button>
+                  <Link
+                      to={getAddButtonPath()}
+                      className="px-6 py-2 rounded-xl text-white bg-[#3B9C79] hover:bg-[#328569] cursor-pointer transition"
+                      >
+                        {getAddButtonText()}
+                  </Link>
               </div>
     </div>
   )

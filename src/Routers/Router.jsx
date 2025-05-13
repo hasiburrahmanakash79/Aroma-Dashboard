@@ -15,6 +15,7 @@ import Subscription from "../Pages/Dashboards/Subscription/Subscription";
 import TransactionHistory from "../Pages/Dashboards/TransactionHistory/TransactionHistory";
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
+import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses />,
+      },
+      {
+        path: "/courses/add",
+        element: <AddCourses />,
       },
       {
         path: "/categories",
