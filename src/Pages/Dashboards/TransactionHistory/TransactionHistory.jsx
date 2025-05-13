@@ -206,6 +206,7 @@ const TransactionHistory = () => {
               <th className="py-5">#SL</th>
               <th className="py-5">Name</th>
               <th className="py-5">Email</th>
+              <th className="py-5">Amount</th>
               <th className="py-5">Address</th>
               <th className="py-5">Action</th>
             </tr>
@@ -216,6 +217,7 @@ const TransactionHistory = () => {
                 <td className="py-4">{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
+                <td>$898</td>
                 <td>{item.address}</td>
                 <td className="flex justify-center pt-3 text-2xl">
                   <button onClick={() => handleOpenModal(item)}>
