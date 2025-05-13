@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-import CommonBar from "../../../components/Common/CommonBar";
-import { useLocation } from "react-router-dom";
+// import React from "react";
 
 const Categories = () => {
 

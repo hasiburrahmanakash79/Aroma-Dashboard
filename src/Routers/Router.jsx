@@ -3,7 +3,6 @@ import Signup from "../Pages/Authentication/Signup";
 import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
-import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 import Overview from "../Pages/Dashboards/Overview/Overview";
 import Users from "../Pages/Dashboards/Users/Users";
 import Oil from "../Pages/Dashboards/Oil/Oil";
@@ -16,9 +15,6 @@ import TransactionHistory from "../Pages/Dashboards/TransactionHistory/Transacti
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
-import AddOils from "../Pages/Dashboards/Oil/AddOils";
-import AddRecipes from "../Pages/Dashboards/Recipes/AddRecipes";
-import AddAdvertisingSpace from "../Pages/Dashboards/AdvertisingSpace/AddAdvertisingSpace";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,6 +73,14 @@ const router = createBrowserRouter([
         element: <Subscription />,
       },
       {
+        path: "/subscription/add",
+        element: <AddPackage />,
+      },
+      {
+        path: "/subscription/update/:id",
+        element: <UpdatePackageForm />,
+      },
+      {
         path: "/history",
         element: <TransactionHistory />,
       },
@@ -85,8 +89,20 @@ const router = createBrowserRouter([
         element: <Setting />,
       },
       {
-        path: "/profile",
-        element: <ProfilePage/>,
+        path: "/setting/profile",
+        element: <ProfileInfo/>,
+      },
+      {
+        path: "/setting/termsCondition",
+        element: <TermsCondition/>,
+      },
+      {
+        path: "/setting/privacy",
+        element: <PrivacyPolicy/>,
+      },
+      {
+        path: "/setting/aboutUs",
+        element: <AboutUs/>,
       },
       
     ],
