@@ -5,6 +5,4 @@
   --font-inter: "Inter", "sans-serif";
 }
 
-@plugin "daisyui" {
-    themes: dark --default, light --light;
-  }
+

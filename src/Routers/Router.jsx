@@ -16,6 +16,9 @@ import TransactionHistory from "../Pages/Dashboards/TransactionHistory/Transacti
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
+import AddOils from "../Pages/Dashboards/Oil/AddOils";
+import AddRecipes from "../Pages/Dashboards/Recipes/AddRecipes";
+import AddAdvertisingSpace from "../Pages/Dashboards/AdvertisingSpace/AddAdvertisingSpace";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,8 +37,16 @@ const router = createBrowserRouter([
         element: <Oil />,
       },
       {
+        path: "/oil/add",
+        element: <AddOils />,
+      },
+      {
         path: "/recipe",
         element: <Recipes />,
+      },
+      {
+        path: "/recipe/add",
+        element: <AddRecipes />,
       },
       {
         path: "/courses",
@@ -52,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/advertising",
         element: <AdvertisingSpace />,
+      },
+      {
+        path: "/advertising/add",
+        element: <AddAdvertisingSpace />,
       },
       {
         path: "/news",

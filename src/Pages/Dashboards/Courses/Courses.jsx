@@ -8,11 +8,11 @@ import CommonBar from "../../../components/Common/CommonBar";
 
 const Courses = () => {
 
-    const location = useLocation();
-    const currentRoute =location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
+      const location = useLocation();
+      const currentRoute =location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
 
 
-     const [currentPage, setCurrentPage] = useState(1);
+      const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
   const totalPages = Math.ceil(course.length / itemsPerPage);
@@ -72,7 +72,7 @@ const Courses = () => {
   return (
     <div className="p-4">
         <CommonBar  currentRoute={currentRoute} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {paginatedCourse.map((course, index) => (
           <div
             key={index}

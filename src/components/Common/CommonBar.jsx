@@ -14,7 +14,7 @@ const CommonBar = ({currentRoute}) => {
   };
   return (
     <div className="flex items-center justify-between gap-2 text-gray-700 font-medium text-lg  mb-8">
-              <div>
+              <div className='flex justify-center items-center gap-2'>
                 <button
                 onClick={() => navigate(-1)}
                 className="hover:bg-gray-200 p-2 rounded-full transition"
