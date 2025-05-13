@@ -62,6 +62,7 @@ const Subscription = () => {
               <p>{plan.name}</p>
               <p>{plan.price}</p>
             </div>
+
             <ul className="space-y-5">
               {plan.features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
@@ -70,8 +71,14 @@ const Subscription = () => {
                 </li>
               ))}
             </ul>
+
             <div className="w-full mt-5">
-              <Link to={`/subscription/update/${plan.id}`} className="px-4 py-2 w-full bg-[#3b9c787e] text-white rounded-lg cursor-pointer">Edit</Link>
+              <Link
+                to={`/subscription/update/${plan.id}`}
+                className="block w-full text-center px-4 py-2 bg-[#3b9c787e] text-white rounded-lg"
+              >
+                Edit
+              </Link>
             </div>
           </div>
         ))}

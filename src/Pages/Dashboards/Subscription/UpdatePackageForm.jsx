@@ -34,7 +34,7 @@ const UpdatePackageForm = () => {
                 type="text"
                 {...register("name", { required: true })}
                 placeholder="Enter Package Name"
-                className="w-full px-5 py-2 border rounded"
+                className="w-full px-5 py-2 border border-gray-300 rounded-md"
               />
             </div>
           </div>
@@ -46,7 +46,7 @@ const UpdatePackageForm = () => {
                 type="number"
                 {...register("amount", { required: true })}
                 placeholder="Enter Amount"
-                className="w-full px-5 py-2 border rounded"
+                className="w-full px-5 py-2 border border-gray-300 rounded-md"
               />
             </div>
           </div>
@@ -58,7 +58,7 @@ const UpdatePackageForm = () => {
                 type="number"
                 {...register("discount")}
                 placeholder="Enter Discount"
-                className="w-full px-5 py-2 border rounded"
+                className="w-full px-5 py-2 border border-gray-300 rounded-md"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ const UpdatePackageForm = () => {
               type="text"
               {...register("expiration")}
               placeholder="Enter Expiration"
-              className="w-full px-5 py-2 border rounded"
+              className="w-full px-5 py-2 border border-gray-300 rounded-md"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ const UpdatePackageForm = () => {
               <input
                 {...register(`features.${index}.value`, { required: true })}
                 placeholder="Enter Feature"
-                className="w-full px-5 py-2 border rounded"
+                className="w-full px-5 py-2 border border-gray-300 rounded-md"
               />
               {fields.length > 1 && (
                 <MdOutlineRemoveCircle
