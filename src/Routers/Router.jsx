@@ -17,6 +17,7 @@ import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
 import UpdatePackageForm from "../Pages/Dashboards/Subscription/UpdatePackageForm";
+import AddPackage from "../Pages/Dashboards/Subscription/AddPackage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/subscription",
         element: <Subscription />,
+      },
+      {
+        path: "/subscription/add",
+        element: <AddPackage />,
       },
       {
         path: "/subscription/update/:id",

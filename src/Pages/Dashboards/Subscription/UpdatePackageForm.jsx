@@ -107,7 +107,7 @@ const UpdatePackageForm = () => {
 
         <button
           type="submit"
-          className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 w-full md:w-1/4 mx-auto block"
+          className="bg-[#328569] text-white px-6 py-2 rounded hover:shadow-lg w-full md:w-1/4 mx-auto block"
         >
           Update
         </button>
