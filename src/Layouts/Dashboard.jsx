@@ -1,5 +1,5 @@
 import logo from "../assets/logo/aroma_logo.png";
-import { Link, Outlet } from "react-router-dom"; // Import useLocation
+import { Link, Outlet, useLocation } from "react-router-dom"; // Import useLocation
 import { RiUserLine, RiSettings4Line } from "react-icons/ri";
 import {
   FaRegChessQueen,
@@ -21,6 +21,8 @@ import { FaChevronDown } from "react-icons/fa";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
 
 
   const handleLogout = () => {
