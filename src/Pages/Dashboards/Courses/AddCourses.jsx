@@ -112,7 +112,7 @@ const AddCourses = () => {
         </div>
 
         {/* Course Title and Link */}
-        <div className=" border-2 p-6  gap-6 mb-6">
+        <div className=" border-2 p-6 pd-0 gap-6 mb-6">
            <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block text-xl font-medium text-white mb-1">

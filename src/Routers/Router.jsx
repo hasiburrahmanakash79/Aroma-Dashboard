@@ -16,6 +16,7 @@ import TransactionHistory from "../Pages/Dashboards/TransactionHistory/Transacti
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
+import AddOils from "../Pages/Dashboards/Oil/AddOils";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/oil",
         element: <Oil />,
+      },
+      {
+        path: "/oil/add",
+        element: <AddOils />,
       },
       {
         path: "/recipe",
