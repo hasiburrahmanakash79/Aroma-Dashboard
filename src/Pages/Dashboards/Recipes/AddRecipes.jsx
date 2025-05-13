@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -56,13 +57,13 @@ const AddRecipes = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       // Reset form or redirect
-      alert("Course added successfully!");
+      toast.success('Recipe added successfully!');
       // You could redirect here or clear the form
     }, 1000);
   };
 
   return (
-    <div className="p-4 dark:text-white">
+    <div className="p-4 text-black dark:text-white">
       {/* Header with back button */}
       <div className="flex items-center mb-6">
         <Link 
@@ -117,7 +118,7 @@ const AddRecipes = () => {
         <div className=" border-2 p-6 pb-0 gap-6 mb-6">
             <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
                 <div>
-                    <label htmlFor="name" className="block text-xl font-medium text-white mb-1">
+                    <label htmlFor="name" className="block text-xl font-medium  mb-1">
                         Recipe Title
                     </label>
                     <input
@@ -131,7 +132,7 @@ const AddRecipes = () => {
                         />
                 </div>
                 <div>
-                    <label className="block text-xl font-medium text-white mb-1">
+                    <label className="block text-xl font-medium  mb-1">
                     Recipe Category
                     </label>
                     <select
@@ -154,7 +155,7 @@ const AddRecipes = () => {
           
             </div>
             <div className="mb-6 w-full">
-                    <label htmlFor="description" className="block text-xl font-medium text-white mb-1">
+                    <label htmlFor="description" className="block text-xl font-medium  mb-1">
                         Recipe Description
                     </label>
                     <textarea
@@ -169,7 +170,7 @@ const AddRecipes = () => {
             </div>
             <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
                 <div>
-                    <label htmlFor="name" className="block text-xl font-medium text-white mb-1">
+                    <label htmlFor="name" className="block text-xl font-medium mb-1">
                         Link Title
                     </label>
                     <input
@@ -183,7 +184,7 @@ const AddRecipes = () => {
                         />
                 </div>
                 <div>
-                    <label htmlFor="courseLink" className="block text-xl font-medium text-white mb-1">
+                    <label htmlFor="courseLink" className="block text-xl font-medium  mb-1">
                         Link
                     </label>
                     <input

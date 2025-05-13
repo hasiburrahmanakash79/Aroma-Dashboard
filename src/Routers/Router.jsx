@@ -18,6 +18,7 @@ import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
 import AddOils from "../Pages/Dashboards/Oil/AddOils";
 import AddRecipes from "../Pages/Dashboards/Recipes/AddRecipes";
+import AddAdvertisingSpace from "../Pages/Dashboards/AdvertisingSpace/AddAdvertisingSpace";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/advertising",
         element: <AdvertisingSpace />,
+      },
+      {
+        path: "/advertising/add",
+        element: <AddAdvertisingSpace />,
       },
       {
         path: "/news",

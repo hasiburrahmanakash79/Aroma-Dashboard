@@ -3,14 +3,11 @@ import toast from "react-hot-toast";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const AddOils = () => {
+const AddAdvertisingSpace = () => {
   const [formData, setFormData] = useState({
-    name: "",
     image: null,
-    oilLink: "",
+    AddAdvertisingSpaceLink: "",
     LinkTitle: "",
-    description: "",
-    category: "",
   });
   
   const [previewImage, setPreviewImage] = useState(null);
@@ -57,7 +54,7 @@ const AddOils = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       // Reset form or redirect
-      toast.success('Oil added successfully!');
+      toast.success('Advertising space added successfully!');
       // You could redirect here or clear the form
     }, 1000);
   };
@@ -66,14 +63,14 @@ const AddOils = () => {
     <div className="p-4 text-black dark:text-white">
       {/* Header with back button */}
       <div className="flex items-center mb-6">
-        <Link 
-          to="/oil" 
+        <Link
+          to="/advertising"
           className="flex items-center text-gray-700 hover:text-[#3B9C79] mr-4"
         >
           <IoChevronBackOutline className="text-4xl " />
           
         </Link>
-        <h1 className="text-2xl font-semibold">Add Oil</h1>
+        <h1 className="text-2xl font-semibold">Add Advertising Space</h1>
       </div>
 
       {/* Form */}
@@ -116,58 +113,7 @@ const AddOils = () => {
 
         {/* Course Title and Link */}
         <div className=" border-2 p-6 pb-0 gap-6 mb-6">
-            <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
-                <div>
-                    <label htmlFor="name" className="block text-xl font-medium  mb-1">
-                        Oil Title
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter a name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full p-3 border border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
-                        />
-                </div>
-                <div>
-                    <label className="block text-xl font-medium  mb-1">
-                    Oil Category
-                    </label>
-                    <select
-                    name="category"
-                    value={formData.category}
-                    onChange={handleChange}
-                    className="w-full p-3 border bg-gray-200 border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
-                    required
-                    >
-                    <option value="" disabled>
-                        Enter a name
-                    </option>
-                    <option value="Breakfast">Olive Oil</option>
-                    <option value="Lunch">Coconut Oil</option>
-                    <option value="Dinner">Sunflower Oil</option>
-                    <option value="Dessert">Peanut Oil</option>
-                    <option value="Snack">Almond Oil</option>
-                    </select>
-                </div>
-          
-            </div>
-            <div className="mb-6 w-full">
-                    <label htmlFor="description" className="block text-xl font-medium  mb-1">
-                        Oil Description
-                    </label>
-                    <textarea
-                        id="description"
-                        name="description"
-                        placeholder="Enter a description"
-                        rows="6"
-                        value={formData.description}
-                        onChange={handleChange}
-                        className="w-full p-3 border border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
-                        ></textarea>
-            </div>
+            
             <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
                 <div>
                     <label htmlFor="name" className="block text-xl font-medium  mb-1">
@@ -217,4 +163,4 @@ const AddOils = () => {
   );
 };
 
-export default AddOils;
+export default AddAdvertisingSpace;

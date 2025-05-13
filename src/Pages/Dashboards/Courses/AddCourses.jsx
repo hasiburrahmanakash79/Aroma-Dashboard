@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -54,13 +55,13 @@ const AddCourses = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       // Reset form or redirect
-      alert("Course added successfully!");
+       toast.success('Course added successfully!');
       // You could redirect here or clear the form
     }, 1000);
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4  text-black dark:text-white">
       {/* Header with back button */}
       <div className="flex items-center mb-6">
         <Link 
@@ -115,7 +116,7 @@ const AddCourses = () => {
         <div className=" border-2 p-6 pd-0 gap-6 mb-6">
            <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
               <div>
-                <label htmlFor="name" className="block text-xl font-medium text-white mb-1">
+                <label htmlFor="name" className="block text-xl font-medium  mb-1">
                 Course Title
                 </label>
                 <input
@@ -130,7 +131,7 @@ const AddCourses = () => {
               </div>
           
               <div>
-                <label htmlFor="courseLink" className="block text-xl font-medium text-white mb-1">
+                <label htmlFor="courseLink" className="block text-xl font-medium  mb-1">
                     Course link
                 </label>
                 <input
@@ -145,7 +146,7 @@ const AddCourses = () => {
               </div>
            </div>
           <div className="mb-6 w-full">
-                <label htmlFor="description" className="block text-xl font-medium text-white mb-1">
+                <label htmlFor="description" className="block text-xl font-medium  mb-1">
                     Course Description
                 </label>
                 <textarea
@@ -167,7 +168,7 @@ const AddCourses = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className=" py-3 bg-[#7BC9AC] hover:bg-[#3B9C79] text-white font-medium rounded-lg transition duration-300 w-62"
+            className=" py-3 bg-[#7BC9AC] hover:bg-[#3B9C79]  font-medium rounded-lg transition duration-300 w-62"
           >
             {isSubmitting ? "Saving..." : "Save"}
           </button>
