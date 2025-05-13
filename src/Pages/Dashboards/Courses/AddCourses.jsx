@@ -67,7 +67,7 @@ const AddCourses = () => {
           to="/courses" 
           className="flex items-center text-gray-700 hover:text-[#3B9C79] mr-4"
         >
-          <IoChevronBackOutline className="text-4xl text-white mr-1" />
+          <IoChevronBackOutline className="text-4xl " />
           
         </Link>
         <h1 className="text-2xl font-semibold">Add Courses</h1>
@@ -122,7 +122,7 @@ const AddCourses = () => {
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="enter a name"
+                    placeholder="Enter a name"
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
@@ -137,7 +137,7 @@ const AddCourses = () => {
                     type="text"
                     id="courseLink"
                     name="courseLink"
-                    placeholder="enter a link"
+                    placeholder="Enter a link"
                     value={formData.courseLink}
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
@@ -151,7 +151,7 @@ const AddCourses = () => {
                 <textarea
                     id="description"
                     name="description"
-                    placeholder="enter a description"
+                    placeholder="Enter a description"
                     rows="6"
                     value={formData.description}
                     onChange={handleChange}
