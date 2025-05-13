@@ -2,11 +2,11 @@ import { useState } from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const AddOils = () => {
+const AddRecipes = () => {
   const [formData, setFormData] = useState({
     name: "",
     image: null,
-    oilLink: "",
+    recipeLink: "",
     LinkTitle: "",
     description: "",
     category: "",
@@ -62,17 +62,17 @@ const AddOils = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 dark:text-white">
       {/* Header with back button */}
       <div className="flex items-center mb-6">
         <Link 
-          to="/oil" 
+          to="/Recipe" 
           className="flex items-center text-gray-700 hover:text-[#3B9C79] mr-4"
         >
           <IoChevronBackOutline className="text-4xl text-white mr-1" />
           
         </Link>
-        <h1 className="text-2xl font-semibold">Add Oil</h1>
+        <h1 className="text-2xl font-semibold">Add Recipe</h1>
       </div>
 
       {/* Form */}
@@ -118,7 +118,7 @@ const AddOils = () => {
             <div className=" grid gap-6 mb-8 grid-cols-1 md:grid-cols-2">
                 <div>
                     <label htmlFor="name" className="block text-xl font-medium text-white mb-1">
-                        Oil Title
+                        Recipe Title
                     </label>
                     <input
                         type="text"
@@ -132,7 +132,7 @@ const AddOils = () => {
                 </div>
                 <div>
                     <label className="block text-xl font-medium text-white mb-1">
-                    Oil Category
+                    Recipe Category
                     </label>
                     <select
                     name="category"
@@ -144,18 +144,18 @@ const AddOils = () => {
                     <option value="" disabled>
                         enter a name
                     </option>
-                    <option value="Breakfast">Olive Oil</option>
-                    <option value="Lunch">Coconut Oil</option>
-                    <option value="Dinner">Sunflower Oil</option>
-                    <option value="Dessert">Peanut Oil</option>
-                    <option value="Snack">Almond Oil</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Snack">Snack</option>
                     </select>
                 </div>
           
             </div>
             <div className="mb-6 w-full">
                     <label htmlFor="description" className="block text-xl font-medium text-white mb-1">
-                        Oil Description
+                        Recipe Description
                     </label>
                     <textarea
                         id="description"
@@ -191,7 +191,7 @@ const AddOils = () => {
                         id="courseLink"
                         name="courseLink"
                         placeholder="enter a link"
-                        value={formData.courseLink}
+                        value={formData.recipeLink}
                         onChange={handleChange}
                         className="w-full p-3 border border-gray-500 rounded-lg focus:ring-white focus:border-white outline-none"
                     />
@@ -216,4 +216,4 @@ const AddOils = () => {
   );
 };
 
-export default AddOils;
+export default AddRecipes;
