@@ -1,5 +1,5 @@
 import { useState } from "react";
-import oils from "./oils"; // your oil data
+import oils from './Oils'
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import CommonBar from "../../../components/Common/CommonBar";
