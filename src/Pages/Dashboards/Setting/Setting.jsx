@@ -16,7 +16,7 @@ const Setting = () => {
           <h1>Setting</h1>
         </div>
         <div className="p-16 w-full space-y-7">
-          <Link  className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
+          <Link to='/setting/profile' className="border border-gray-300 p-2 rounded flex justify-between items-center w-full px-7 cursor-pointer ">
             <p>Personal Information</p>
             <IoChevronForwardSharp />
           </Link>

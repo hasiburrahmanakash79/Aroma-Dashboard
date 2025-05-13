@@ -18,6 +18,7 @@ import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
 import UpdatePackageForm from "../Pages/Dashboards/Subscription/UpdatePackageForm";
 import AddPackage from "../Pages/Dashboards/Subscription/AddPackage";
+import ProfileInfo from "../Pages/Dashboards/Setting/ProfileInfo";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,8 +81,8 @@ const router = createBrowserRouter([
         element: <Setting />,
       },
       {
-        path: "/profile",
-        element: <ProfilePage/>,
+        path: "/setting/profile",
+        element: <ProfileInfo/>,
       },
       
     ],
