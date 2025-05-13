@@ -26,8 +26,8 @@ const ProfileInformation = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border rounded-lg border-gray-300">
-      <div className="flex justify-between items-center mb-5 border-b border-gray-300 p-5">
+    <form onSubmit={handleSubmit} className="border rounded-lg border-gray-300 p-5">
+      <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
         <h2 className="font-semibold text-lg">Personal Information</h2>
         {!isEditing && (
           <button

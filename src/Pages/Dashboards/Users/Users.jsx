@@ -221,7 +221,7 @@ const Users = () => {
           </thead>
           <tbody>
             {paginatedUsers.map((student, idx) => (
-              <tr key={idx} className="border-t text-gray-600">
+              <tr key={idx} className="border-t border-gray-200 text-gray-500">
                 <td className="py-4">{student.id}</td>
                 <td>{student.fullName}</td>
                 <td>{student.email}</td>

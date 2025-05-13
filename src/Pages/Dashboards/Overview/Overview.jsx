@@ -3,7 +3,8 @@ import EarningProgressBar from "./EarningProgressBar";
 
 const Overview = () => {
   return (
-    <div>
+    <div className="p-4">
+      <h1 className="text-2xl font-semibold mb-5">Overview</h1>
       <div className="flex justify-center items-center gap-10 py-10">
         <div className="border border-base-300 py-7 px-20 rounded-xl text-center ">
           <p>Total Subscribe</p>

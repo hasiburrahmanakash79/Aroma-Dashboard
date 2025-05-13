@@ -15,6 +15,15 @@ import TransactionHistory from "../Pages/Dashboards/TransactionHistory/Transacti
 import Setting from "../Pages/Dashboards/Setting/Setting";
 import NewsFeed from "../Pages/Dashboards/NewsFeed/NewsFeed";
 import AddCourses from "../Pages/Dashboards/Courses/AddCourses";
+import AddOils from "../Pages/Dashboards/Oil/AddOils";
+import AddRecipes from "../Pages/Dashboards/Recipes/AddRecipes";
+import AddAdvertisingSpace from "../Pages/Dashboards/AdvertisingSpace/AddAdvertisingSpace";
+import AddPackage from "../Pages/Dashboards/Subscription/AddPackage";
+import UpdatePackageForm from "../Pages/Dashboards/Subscription/UpdatePackageForm";
+import ProfileInformation from "../Pages/Dashboards/Setting/ProfileInfo";
+import TermsCondition from "../Pages/Dashboards/Setting/TermsCondition";
+import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
+import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -90,7 +99,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/setting/profile",
-        element: <ProfileInfo/>,
+        element: <ProfileInformation/>,
       },
       {
         path: "/setting/termsCondition",

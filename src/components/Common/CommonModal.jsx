@@ -4,7 +4,7 @@ const CommonModal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 bg-opacity-40 flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-black/60 bg-opacity-40 flex justify-center items-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-[90%] max-w-md relative">
         <button
           onClick={onClose}

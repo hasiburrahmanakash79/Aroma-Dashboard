@@ -85,11 +85,7 @@ const Courses = () => {
             />
             <div className="p-4">
               <h1 className="text-xl font-bold mb-2">{course.name}</h1>
-              <ul className="list-disc pl-5 text-sm text-gray-600">
-                {course.benefits.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
+              <p className="text-xs">{course.description}</p>
             </div>
           </div>
         ))}

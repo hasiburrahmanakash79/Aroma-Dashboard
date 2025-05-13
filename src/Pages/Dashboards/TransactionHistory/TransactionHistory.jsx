@@ -212,7 +212,7 @@ const TransactionHistory = () => {
           </thead>
           <tbody>
             {paginatedHistory.map((item, idx) => (
-              <tr key={idx} className="border-t border-base-300 text-gray-500">
+              <tr key={idx} className="border-t border-gray-200 text-gray-500">
                 <td className="py-4">{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>

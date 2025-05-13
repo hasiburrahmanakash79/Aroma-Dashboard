@@ -2,211 +2,97 @@ const course = [
   {
     name: "Olive Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Heart-friendly fat",
-      "Boosts skin glow",
-      "Improves brain function",
-      "Reduces inflammation naturally",
-      "Supports healthy digestion",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Coconut Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Boosts metabolism",
-      "Improves hair health",
-      "Supports skin moisture",
-      "Has antimicrobial effects",
-      "Aids weight management",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Argan Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Rich in Vitamin E",
-      "Strengthens hair",
-      "Soothes skin irritation",
-      "Anti-aging properties",
-      "Moisturizes deeply",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Avocado Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "High in healthy fats",
-      "Supports eye health",
-      "Lowers blood pressure",
-      "Boosts nutrient absorption",
-      "Good for dry skin",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Almond Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Lightens dark circles",
-      "Soothes dry skin",
-      "Promotes heart health",
-      "Anti-inflammatory effects",
-      "Improves hair texture",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Flaxseed Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Rich in Omega-3",
-      "Improves digestion",
-      "Reduces inflammation",
-      "Good for heart health",
-      "Supports weight loss",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Castor Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Boosts hair growth",
-      "Relieves constipation",
-      "Heals skin wounds",
-      "Hydrates scalp",
-      "Anti-fungal properties",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Sesame Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Good for bones",
-      "Anti-inflammatory",
-      "Promotes dental health",
-      "Rich in antioxidants",
-      "Improves skin elasticity",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Tea Tree Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Fights acne",
-      "Soothes eczema",
-      "Kills bacteria",
-      "Reduces dandruff",
-      "Promotes wound healing",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Jojoba Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Balances oily skin",
-      "Promotes collagen",
-      "Nourishes scalp",
-      "Fights wrinkles",
-      "Gentle on sensitive skin",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Mustard Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Stimulates blood flow",
-      "Fights infections",
-      "Improves circulation",
-      "Enhances skin tone",
-      "Supports joint health",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Neem Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Fights skin infections",
-      "Natural pesticide",
-      "Relieves dandruff",
-      "Antibacterial properties",
-      "Treats acne naturally",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Hemp Seed Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Balances hormones",
-      "Rich in Omega-6",
-      "Fights inflammation",
-      "Supports healthy skin",
-      "Boosts immunity",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Emu Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Deep skin hydration",
-      "Reduces scars",
-      "Treats burns",
-      "Improves wound healing",
-      "Eases joint pain",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Pumpkin Seed Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Supports prostate health",
-      "Rich in magnesium",
-      "Improves bladder function",
-      "Boosts heart health",
-      "Great for skin care",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Black Seed Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Boosts immunity",
-      "Anti-cancer properties",
-      "Lowers blood sugar",
-      "Treats asthma symptoms",
-      "Improves skin texture",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Grapeseed Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "High in antioxidants",
-      "Fights aging signs",
-      "Reduces scars",
-      "Tightens skin",
-      "Supports heart health",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Rosehip Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Brightens complexion",
-      "Fades dark spots",
-      "Treats acne scars",
-      "Hydrates dry skin",
-      "Reduces fine lines",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
   {
     name: "Kalonji Oil",
     image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
-    benefits: [
-      "Relieves headaches",
-      "Improves memory",
-      "Boosts liver health",
-      "Fights hair fall",
-      "Controls diabetes",
-    ],
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id."
   },
 ];
 

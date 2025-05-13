@@ -69,7 +69,7 @@ const Recipes = () => {
        );
      };
      return (
-       <div className="p-4 dark:text-white">
+       <div className="p-4">
         <CommonBar  currentRoute={currentRoute} />
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
            {paginatedRecipe.map((recipe, index) => (

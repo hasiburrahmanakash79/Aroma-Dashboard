@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { IoChevronBackOutline } from "react-icons/io5";
+import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const AddAdvertisingSpace = () => {
@@ -60,14 +60,14 @@ const AddAdvertisingSpace = () => {
   };
 
   return (
-    <div className="p-4 text-black dark:text-white">
+    <div className="p-4">
       {/* Header with back button */}
       <div className="flex items-center mb-6">
         <Link
           to="/advertising"
-          className="flex items-center text-gray-700 hover:text-[#3B9C79] mr-4"
+           className="mr-4"
         >
-          <IoChevronBackOutline className="text-4xl " />
+          <IoArrowBackOutline className="text-2xl"/>
           
         </Link>
         <h1 className="text-2xl font-semibold">Add Advertising Space</h1>

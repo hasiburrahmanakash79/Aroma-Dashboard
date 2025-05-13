@@ -130,7 +130,7 @@ const Dashboard = () => {
     <div className="flex">
       {/* Sidebar */}
       <div
-        className={`w-52 p-4 h-screen border-r-2 border-base-300 fixed left-0 top-0 bottom-0 z-50 pt-8 transition-all duration-500`}
+        className={`w-60 p-4 h-screen border-r-2 border-gray-200 fixed left-0 top-0 bottom-0 z-50 pt-8 transition-all duration-500`}
       >
         <div className="mb-10">
           <img
@@ -170,9 +170,9 @@ const Dashboard = () => {
         <div className="mt-28 bottom-10 absolute w-full">
           <button
             onClick={handleLogout}
-            className={`-ml-4 flex p-2 pl-6 cursor-pointer text-sm items-center w-full bg-red-500 text-white`}
+            className={`flex cursor-pointer text-sm items-center justify-center  p-2 w-4/5 ms-3 rounded bg-red-500 text-white`}
           >
-            <li className="flex items-center gap-x-4 w-full">
+            <li className="flex items-center justify-center gap-x-4 w-full">
               <FaRightFromBracket />
               <span className={`origin-left duration-200`}>Logout</span>
             </li>
@@ -182,7 +182,7 @@ const Dashboard = () => {
 
       {/* Main Content Area */}
       <div
-        className={`pl-56 p-4 flex-1 overflow-y-auto transition-all duration-500 h-[100vh]`}
+        className={`pl-64 p-4 flex-1 overflow-y-auto transition-all duration-500 h-[100vh]`}
       >
         <div className="bg-[#E4F7F0] shadow px-6 py-4 flex justify-between items-center mb-4">
           {/* Left Section */}
