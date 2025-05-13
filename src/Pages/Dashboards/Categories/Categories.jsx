@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { IoChevronBackOutline } from "react-icons/io5";
+
 import CommonBar from "../../../components/Common/CommonBar";
 import { useLocation } from "react-router-dom";
 
 const Categories = () => {
-  const navigate = useNavigate();
+
   const location = useLocation();
   const currentRoute = location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
+
+
 
   // State to track the active category
   const [activeCategory, setActiveCategory] = useState("Gesundheit"); // Default to "Gesundheit" as active
@@ -34,8 +35,8 @@ const Categories = () => {
 
   return (
     <div className="p-4">
-      <CommonBar currentRoute={currentRoute} />
-      
+      <CommonBar currentRoute={currentRoute}  />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {categories.map((category, index) => (
           <div
