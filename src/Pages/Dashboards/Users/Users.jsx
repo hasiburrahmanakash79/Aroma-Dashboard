@@ -1,5 +1,6 @@
 import { IoAlertCircleOutline, IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import { useState } from "react";
+import CommonModal from "../../../components/Common/CommonModal";
 
 const users = [
   {
@@ -151,6 +152,9 @@ const Users = () => {
   const totalPages = Math.ceil(users.length / USERS_PER_PAGE);
   const [goTo, setGoTo] = useState("");
 
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const paginatedUsers = users.slice(
     (currentPage - 1) * USERS_PER_PAGE,
     currentPage * USERS_PER_PAGE
@@ -161,32 +165,29 @@ const Users = () => {
     if (!isNaN(page)) setCurrentPage(page);
   };
 
+  const handleViewUser = (user) => {
+    setSelectedUser(user);
+    setIsModalOpen(true);
+  };
+
   const renderPageNumbers = () => {
     const pages = [];
 
     if (totalPages <= 5) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
       pages.push(1);
       if (currentPage > 3) pages.push("...");
       const start = Math.max(2, currentPage - 1);
       const end = Math.min(totalPages - 1, currentPage + 1);
-
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-
+      for (let i = start; i <= end; i++) pages.push(i);
       if (currentPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
     }
 
     return pages.map((num, i) =>
       num === "..." ? (
-        <button key={i} className="px-3 py-2 border rounded mx-1 text-gray-500">
-          ...
-        </button>
+        <button key={i} className="px-3 py-2 border rounded mx-1 text-gray-500">...</button>
       ) : (
         <button
           key={i}
@@ -205,10 +206,11 @@ const Users = () => {
 
   return (
     <div className="p-4">
+      <h1 className="text-2xl font-semibold mb-5">All User</h1>
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-center">
-          <thead className="bg-[#3B9C79]">
-            <tr className="text-white">
+          <thead className="bg-[#3B9C79] text-white">
+            <tr>
               <th className="py-5">ID</th>
               <th className="py-5">Full Name</th>
               <th className="py-5">Email</th>
@@ -219,14 +221,19 @@ const Users = () => {
           </thead>
           <tbody>
             {paginatedUsers.map((student, idx) => (
-              <tr key={idx} className="border-t border-base-300 text-gray-500">
+              <tr key={idx} className="border-t text-gray-600">
                 <td className="py-4">{student.id}</td>
                 <td>{student.fullName}</td>
                 <td>{student.email}</td>
                 <td>{student.username}</td>
-                <td>{student.date}/1200</td>
+                <td>{student.date}</td>
                 <td className="flex justify-center pt-3 text-2xl">
-                  <IoAlertCircleOutline />
+                  <button
+                    onClick={() => handleViewUser(student)}
+                    className="hover:text-[#3B9C79]"
+                  >
+                    <IoAlertCircleOutline />
+                  </button>
                 </td>
               </tr>
             ))}
@@ -246,15 +253,12 @@ const Users = () => {
         {renderPageNumbers()}
 
         <button
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           className="px-4 py-2 bg-[#3B9C79] text-white rounded flex items-center gap-3"
         >
           Next <IoChevronForwardOutline />
         </button>
 
-        {/* Page input */}
         <div className="flex items-center gap-2 ml-4">
           <span>Page</span>
           <input
@@ -272,6 +276,46 @@ const Users = () => {
           </button>
         </div>
       </div>
+
+      {/* Common Modal */}
+      <CommonModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="User Details"
+      >
+        {selectedUser && (
+          <div className="space-y-5">
+            <div className="flex items-center justify-between p-1 border-b border-gray-200">
+              <p>
+                <strong>#SL:</strong>{" "}
+              </p>
+              <span>{selectedUser.id}</span>
+            </div>
+            <div className="flex items-center justify-between p-1 border-b border-gray-200">
+              <p>
+                <strong>Full Name:</strong>{" "}
+              </p>
+              <span>{selectedUser.fullName}</span>
+            </div>
+            <div className="flex items-center justify-between p-1 border-b border-gray-200">
+              <p>
+                <strong>Email:</strong>
+              </p>
+              <span>{selectedUser.email}</span>
+            </div>
+            <div className="flex items-center justify-between p-1 border-b border-gray-200">
+              <p>
+                <strong>User Name:</strong>
+              </p>
+              {selectedUser.username}
+            </div>
+            <div className="w-full ">
+              <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 w-full bg-[#3B9C79] text-white rounded cursor-pointer">Download</button>
+            </div>
+          </div>
+          
+        )}
+      </CommonModal>
     </div>
   );
 };
