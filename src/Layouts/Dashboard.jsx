@@ -168,7 +168,7 @@ const Dashboard = () => {
         <div className="mt-28 bottom-10 absolute w-full">
           <button
             onClick={handleLogout}
-            className={`flex cursor-pointer text-sm items-center justify-center  p-2 w-4/5 ms-3 rounded bg-red-500 text-white`}
+            className={`flex cursor-pointer text-sm items-center justify-center  p-2 w-4/5 ms-2.5 rounded bg-red-500 text-white`}
           >
             <li className="flex items-center justify-center gap-x-4 w-full">
               <FaRightFromBracket />
@@ -225,6 +225,7 @@ const Dashboard = () => {
                   Profile
                 </button>
                 <button
+                
                   onClick={() => setIsOpen(!isOpen)}
                   className="w-full text-left px-4 py-2 hover:bg-green-50 text-gray-700 transition"
                 >
