@@ -1,12 +1,9 @@
-import { IoChevronForwardSharp } from "react-icons/io5";
-import CommonBar from "../../../components/Common/CommonBar";
+import { IoArrowBackOutline, IoChevronForwardSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import CommonModal from "../../../components/Common/CommonModal";
 
 const Setting = () => {
-  const currentRoute =
-    location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
 
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,7 +27,13 @@ const Setting = () => {
 
   return (
     <div className="p-4">
-      <CommonBar currentRoute={currentRoute} />
+      {/* Header with back button */}
+      <div className="flex items-center mb-6">
+        <Link to="/" className="mr-4">
+          <IoArrowBackOutline className="text-2xl" />
+        </Link>
+        <h1 className="text-2xl font-semibold">Setting</h1>
+      </div>
       <div className="border border-gray-300 rounded-2xl">
         <div className="p-4 border-b border-gray-300">
           <h1>Setting</h1>
@@ -79,9 +82,13 @@ const Setting = () => {
       </div>
 
       {/* ✅ Change Password Modal */}
-      <CommonModal isOpen={showModal} onClose={() => setShowModal(false)} title="Change Password">
+      <CommonModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title="Change Password"
+      >
         <div className="space-y-4 mt-4">
-            <label className="block mb-1">Current Password</label>
+          <label className="block mb-1">Current Password</label>
           <input
             type="password"
             placeholder="Current Password"
