@@ -153,7 +153,7 @@ const Dashboard = () => {
                   : "hover:bg-[#E4F7F0]"
               }`}
             >
-              <li className="flex items-center gap-x-5">
+              <li className="flex items-center gap-x-3 ps-3">
                 <IconContext.Provider
                   value={{ className: "react-icon text-xl" }}
                 >

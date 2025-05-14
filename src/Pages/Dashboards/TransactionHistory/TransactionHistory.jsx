@@ -293,6 +293,12 @@ const TransactionHistory = () => {
             </div>
             <div className="flex items-center justify-between p-1 border-b border-gray-200">
               <p>
+                <strong>Amount:</strong>
+              </p>
+              $898
+            </div>
+            <div className="flex items-center justify-between p-1 border-b border-gray-200">
+              <p>
                 <strong>Address:</strong>
               </p>
               {selectedData.address}

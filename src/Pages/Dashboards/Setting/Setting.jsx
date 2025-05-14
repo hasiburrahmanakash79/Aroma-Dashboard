@@ -96,7 +96,7 @@ const Setting = () => {
             onChange={(e) => handleChange("currentPassword", e.target.value)}
             className="w-full border border-gray-300 px-3 py-2 rounded"
           />
-          <label className="block mb-1">Confirm Password</label>
+          <label className="block mb-1">New Password</label>
           <input
             type="password"
             placeholder="New Password"
@@ -104,7 +104,7 @@ const Setting = () => {
             onChange={(e) => handleChange("newPassword", e.target.value)}
             className="w-full border border-gray-300 px-3 py-2 rounded"
           />
-          <label className="block mb-1">Confirm Password</label>
+          <label className="block mb-1">Confirm New Password</label>
           <input
             type="password"
             placeholder="Confirm New Password"

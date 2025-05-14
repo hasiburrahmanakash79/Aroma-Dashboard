@@ -307,9 +307,9 @@ const Users = () => {
             </div>
             <div className="flex items-center justify-between p-1 border-b border-gray-200">
               <p>
-                <strong>User Name:</strong>
+                <strong>Address:</strong>
               </p>
-              {selectedUser.username}
+              123 Main St, New York, NY
             </div>
             <div className="w-full ">
               <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 w-full bg-[#3B9C79] text-white rounded cursor-pointer">Download</button>
