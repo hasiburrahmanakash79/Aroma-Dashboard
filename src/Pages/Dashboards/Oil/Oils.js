@@ -1,7 +1,8 @@
 const oils = [
   {
     name: "Olive Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Heart-friendly fat",
       "Boosts skin glow",
@@ -12,7 +13,8 @@ const oils = [
   },
   {
     name: "Coconut Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Boosts metabolism",
       "Improves hair health",
@@ -23,7 +25,8 @@ const oils = [
   },
   {
     name: "Argan Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Rich in Vitamin E",
       "Strengthens hair",
@@ -34,7 +37,8 @@ const oils = [
   },
   {
     name: "Avocado Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "High in healthy fats",
       "Supports eye health",
@@ -45,7 +49,8 @@ const oils = [
   },
   {
     name: "Almond Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Lightens dark circles",
       "Soothes dry skin",
@@ -56,7 +61,8 @@ const oils = [
   },
   {
     name: "Flaxseed Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Rich in Omega-3",
       "Improves digestion",
@@ -67,7 +73,8 @@ const oils = [
   },
   {
     name: "Castor Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Boosts hair growth",
       "Relieves constipation",
@@ -78,7 +85,8 @@ const oils = [
   },
   {
     name: "Sesame Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Good for bones",
       "Anti-inflammatory",
@@ -89,7 +97,8 @@ const oils = [
   },
   {
     name: "Tea Tree Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Fights acne",
       "Soothes eczema",
@@ -100,7 +109,8 @@ const oils = [
   },
   {
     name: "Jojoba Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Balances oily skin",
       "Promotes collagen",
@@ -111,7 +121,8 @@ const oils = [
   },
   {
     name: "Mustard Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Stimulates blood flow",
       "Fights infections",
@@ -122,7 +133,8 @@ const oils = [
   },
   {
     name: "Neem Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Fights skin infections",
       "Natural pesticide",
@@ -133,7 +145,8 @@ const oils = [
   },
   {
     name: "Hemp Seed Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Balances hormones",
       "Rich in Omega-6",
@@ -144,7 +157,8 @@ const oils = [
   },
   {
     name: "Emu Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Deep skin hydration",
       "Reduces scars",
@@ -155,7 +169,8 @@ const oils = [
   },
   {
     name: "Pumpkin Seed Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Supports prostate health",
       "Rich in magnesium",
@@ -166,7 +181,8 @@ const oils = [
   },
   {
     name: "Black Seed Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Boosts immunity",
       "Anti-cancer properties",
@@ -177,7 +193,8 @@ const oils = [
   },
   {
     name: "Grapeseed Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "High in antioxidants",
       "Fights aging signs",
@@ -188,7 +205,8 @@ const oils = [
   },
   {
     name: "Rosehip Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Brightens complexion",
       "Fades dark spots",
@@ -199,7 +217,8 @@ const oils = [
   },
   {
     name: "Kalonji Oil",
-    image: "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
+    image:
+      "https://skyandsol.co/cdn/shop/articles/olives-and-olive-oil-2023-03-17-17-20-24-utc_1_1_1_f69d3870-4ef2-4cea-bf14-f16142d82a38.jpg?v=1740573025",
     benefits: [
       "Relieves headaches",
       "Improves memory",

@@ -138,10 +138,7 @@ const AddCourses = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="courseLink"
-                className="block text-sm mb-1"
-              >
+              <label htmlFor="courseLink" className="block text-sm mb-1">
                 Course link
               </label>
               <input
@@ -156,10 +153,7 @@ const AddCourses = () => {
             </div>
           </div>
           <div className="mb-6 w-full">
-            <label
-              htmlFor="description"
-              className="block text-sm mb-1"
-            >
+            <label htmlFor="description" className="block text-sm mb-1">
               Course Description
             </label>
             <textarea

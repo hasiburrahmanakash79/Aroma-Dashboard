@@ -100,39 +100,38 @@ const router = createBrowserRouter([
       },
       {
         path: "/setting/profile",
-        element: <ProfileInformation/>,
+        element: <ProfileInformation />,
       },
       {
         path: "/setting/termsCondition",
-        element: <TermsCondition/>,
+        element: <TermsCondition />,
       },
       {
         path: "/setting/privacy",
-        element: <PrivacyPolicy/>,
+        element: <PrivacyPolicy />,
       },
       {
         path: "/setting/aboutUs",
-        element: <AboutUs/>,
+        element: <AboutUs />,
       },
-      
     ],
   },
   {
-        path: "/signin",
-        element: <SignIn />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
-        path: "/otp",
-        element: <OtpVerification />,
-      },
-      {
-        path: "/reset_password",
-        element: <ResetPass />,
-      },
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/otp",
+    element: <OtpVerification />,
+  },
+  {
+    path: "/reset_password",
+    element: <ResetPass />,
+  },
 ]);
 
 export default router;

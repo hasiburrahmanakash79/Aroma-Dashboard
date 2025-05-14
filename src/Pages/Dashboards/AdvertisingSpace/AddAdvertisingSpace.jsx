@@ -68,7 +68,10 @@ const AddAdvertisingSpace = () => {
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="w-full  mx-auto p-6 border border-gray-200 rounded-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full  mx-auto p-6 border border-gray-200 rounded-lg"
+      >
         {/* Image Upload */}
         <div className="mb-6">
           <div className="flex flex-col items-center justify-center rounded-lg w-50 h-64 border border-gray-300 border-gray-200rounded-lg bg-gray-100 cursor-pointer hover:bg-gray-200 mb-2">

@@ -265,14 +265,14 @@ const Users = () => {
           <span>Page</span>
           <input
             type="number"
-            className="w-14 outline-none border border-base-300 rounded px-2 py-1 text-center"
+            className="w-14 outline-none bg-[#3B9C79] text-white rounded px-2 py-2 text-center"
             value={goTo}
             onChange={(e) => setGoTo(e.target.value)}
             placeholder={`${currentPage}`}
           />
           <button
             onClick={handleGo}
-            className="px-4 py-1 bg-[#3B9C79] text-white rounded"
+            className="px-4 py-1 rounded"
           >
             Go
           </button>

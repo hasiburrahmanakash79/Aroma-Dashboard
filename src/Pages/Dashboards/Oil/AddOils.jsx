@@ -71,7 +71,10 @@ const AddOils = () => {
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="w-full  mx-auto p-6 border border-gray-300 rounded-2xl">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full  mx-auto p-6 border border-gray-300 rounded-2xl"
+      >
         {/* Image Upload */}
         <div className="mb-6">
           <div className="flex flex-col items-center justify-center w-50 h-64 border border-gray-200 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100 mb-2">

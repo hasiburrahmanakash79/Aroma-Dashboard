@@ -4,7 +4,6 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import CommonModal from "../../../components/Common/CommonModal"; // Update this path as needed
 
 const Categories = () => {
-
   const [activeCategory, setActiveCategory] = useState("Gesundheit");
 
   const [showModal, setShowModal] = useState(false);
@@ -36,7 +35,7 @@ const Categories = () => {
     }
   };
 
-    return (
+  return (
     <div className="p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center mb-5">

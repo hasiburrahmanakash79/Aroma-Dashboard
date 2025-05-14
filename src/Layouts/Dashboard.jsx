@@ -18,12 +18,10 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
-
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
-
 
   const handleLogout = () => {
     Swal.fire({
@@ -254,7 +252,7 @@ const Dashboard = () => {
             <button  className="px-6 py-2 rounded-xl text-white bg-green-500 cursor-pointer">Add {currentRoute.replace(/-/g, " ")}</button>
           </div>
         </div> */}
-        
+
         <Outlet />
       </div>
     </div>

@@ -139,9 +139,7 @@ const AddRecipes = () => {
               />
             </div>
             <div>
-              <label className="block text-sm mb-1">
-                Recipe Category
-              </label>
+              <label className="block text-sm mb-1">Recipe Category</label>
               <select
                 name="category"
                 value={formData.category}
@@ -161,10 +159,7 @@ const AddRecipes = () => {
             </div>
           </div>
           <div className="mb-6 w-full">
-            <label
-              htmlFor="description"
-              className="block text-sm mb-1"
-            >
+            <label htmlFor="description" className="block text-sm mb-1">
               Recipe Description
             </label>
             <textarea
@@ -193,10 +188,7 @@ const AddRecipes = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="courseLink"
-                className="block text-sm mb-1"
-              >
+              <label htmlFor="courseLink" className="block text-sm mb-1">
                 Link
               </label>
               <input

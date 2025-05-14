@@ -15,7 +15,6 @@ const Overview = () => {
           <h1 className="text-5xl font-semibold pt-2">$1200</h1>
         </div>
       </div>
-
       <EarningProgressBar />
       <div>
         <div className="flex justify-between items-center my-5 px-4">

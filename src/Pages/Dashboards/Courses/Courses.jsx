@@ -1,18 +1,17 @@
 // import React from 'react';
 import { useState } from "react";
- // your oil data
+// your oil data
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import course from "./Course";
 import { useLocation } from "react-router-dom";
 import CommonBar from "../../../components/Common/CommonBar";
 
 const Courses = () => {
+  const location = useLocation();
+  const currentRoute =
+    location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
 
-      const location = useLocation();
-      const currentRoute =location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
-
-
-      const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
   const totalPages = Math.ceil(course.length / itemsPerPage);
@@ -71,7 +70,7 @@ const Courses = () => {
   };
   return (
     <div className="p-4">
-        <CommonBar  currentRoute={currentRoute} />
+      <CommonBar currentRoute={currentRoute} />
       <div className="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {paginatedCourse.map((course, index) => (
           <div
@@ -116,15 +115,12 @@ const Courses = () => {
           <span>Page</span>
           <input
             type="number"
-            className="w-14 outline-none border border-base-300 rounded px-2 py-1 text-center"
+            className="w-14 outline-none bg-[#3B9C79] text-white rounded px-2 py-2 text-center"
             value={goTo}
             onChange={(e) => setGoTo(e.target.value)}
             placeholder={`${currentPage}`}
           />
-          <button
-            onClick={handleGo}
-            className="px-4 py-1 bg-[#3B9C79] text-white rounded"
-          >
+          <button onClick={handleGo} className="px-4 py-1 rounded">
             Go
           </button>
         </div>
