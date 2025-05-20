@@ -7,7 +7,7 @@ import {
   FaBottleWater,
   FaMoneyCheckDollar,
 } from "react-icons/fa6";
-import { GiBowlOfRice } from "react-icons/gi";
+import { GiBowlOfRice, GiThreeLeaves } from "react-icons/gi";
 import { GoMegaphone } from "react-icons/go";
 import { SiGooglenews } from "react-icons/si";
 import { PiGraduationCapLight } from "react-icons/pi";
@@ -41,6 +41,7 @@ const Dashboard = () => {
   const iconMappings = {
     RoleHome: MdHomeWork,
     User: RiUserLine,
+    Leaves: GiThreeLeaves,
     Oil: FaBottleWater,
     recipe: GiBowlOfRice,
     Course: PiGraduationCapLight,
@@ -64,6 +65,12 @@ const Dashboard = () => {
       title: "User",
       path: "/user",
       icon: iconMappings.User,
+      role: "admin",
+    },
+    {
+      title: "Plants",
+      path: "/plants",
+      icon: iconMappings.Leaves,
       role: "admin",
     },
     {
