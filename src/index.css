@@ -8,3 +8,21 @@
 @plugin "daisyui" {
     themes: dark -- light, light -- light;
   }
+
+
+.quill-custom .ql-toolbar {
+  @apply rounded-t-xl bg-[#4CAF87] text-white;
+}
+
+
+.quill-custom .ql-toolbar .ql-picker-label,
+.quill-custom .ql-toolbar .ql-stroke,
+.quill-custom .ql-toolbar .ql-fill {
+  color: white !important;
+  stroke: white !important;
+}
+
+
+.quill-custom .ql-container {
+  @apply min-h-[200px] max-h-[200px] rounded-b-xl bg-white overflow-y-auto;
+}

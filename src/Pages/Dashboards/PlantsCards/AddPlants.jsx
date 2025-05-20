@@ -42,6 +42,14 @@ const AddPlants = () => {
       reader.readAsDataURL(file);
     }
   };
+  const modules = {
+    toolbar: [
+      [{ header: [2, 3, false] }],
+      ["bold", "italic", "underline"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+    ],
+  };
 
   return (
     <div className="p-4">
@@ -109,8 +117,9 @@ const AddPlants = () => {
               value={description}
               onChange={setDescription}
               theme="snow"
+              modules={modules}
               placeholder="Write your plant description here..."
-              className="bg-white rounded-lg"
+              className="quill-custom"
             />
           </div>
         </div>
