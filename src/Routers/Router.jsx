@@ -25,7 +25,7 @@ import TermsCondition from "../Pages/Dashboards/Setting/TermsCondition";
 import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
 import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
 import ResetPass from "../Pages/Authentication/ResetPass";
-import Plants from "../Pages/Dashboards/Plants/Plants";
+import PlantsCards from "../Pages/Dashboards/PlantsCards/PlantsCards";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/plants",
-        element: <Plants />,
+        element: <PlantsCards />,
       },
       {
         path: "/oil",

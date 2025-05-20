@@ -1,12 +1,10 @@
-// import React from 'react';
-
 import { useLocation } from "react-router-dom";
 import CommonBar from "../../../components/Common/CommonBar";
-import plants from './plants'
+import plantData from "./plantData";
 import { useState } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
-const Plants = () => {
+const PlantsCards = () => {
   const location = useLocation();
   const currentRoute =
     location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
@@ -14,10 +12,10 @@ const Plants = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  const totalPages = Math.ceil(plants.length / itemsPerPage);
+  const totalPages = Math.ceil(plantData.length / itemsPerPage);
   const [goTo, setGoTo] = useState("");
 
-  const paginatedPlants = plants.slice(
+  const paginatedPlants = plantData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -137,4 +135,4 @@ const Plants = () => {
   );
 };
 
-export default Plants;
+export default PlantsCards;

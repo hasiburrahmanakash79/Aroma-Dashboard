@@ -1,4 +1,4 @@
-const plants = [
+const plantData = [
   {
     name: "Olive Oil",
     image:
@@ -229,4 +229,4 @@ const plants = [
   },
 ];
 
-export default plants;
+export default plantData;
