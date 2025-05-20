@@ -26,6 +26,7 @@ import PrivacyPolicy from "../Pages/Dashboards/Setting/PrivacyPolicy";
 import AboutUs from "../Pages/Dashboards/Setting/AboutUs";
 import ResetPass from "../Pages/Authentication/ResetPass";
 import PlantsCards from "../Pages/Dashboards/PlantsCards/PlantsCards";
+import AddPlants from "../Pages/Dashboards/PlantsCards/AddPlants";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/plants",
         element: <PlantsCards />,
+      },
+      {
+        path: "/plants/add",
+        element: <AddPlants />,
       },
       {
         path: "/oil",
