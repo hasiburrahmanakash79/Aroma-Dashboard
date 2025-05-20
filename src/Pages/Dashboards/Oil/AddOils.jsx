@@ -356,7 +356,7 @@ const AddOils = () => {
             <label className="block text-sm font-medium mb-2">Add Tags</label>
             <div className="space-y-3">
               {fields.map((field, index) => (
-                <div key={field.id} className="flex items-center gap-2">
+                <div key={field.id} className="flex items-center gap-5">
                   <input
                     {...register(`tags.${index}.value`, { required: true })}
                     type="text"
