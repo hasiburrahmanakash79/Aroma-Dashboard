@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { IoArrowBackOutline, IoCloudUploadOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css"; // Quill's default theme
 
 const AddPlants = () => {
   const {
@@ -19,11 +21,14 @@ const AddPlants = () => {
   });
 
   const [previewImage, setPreviewImage] = useState(null);
+  const [description, setDescription] = useState("");
 
   const onSubmit = (data) => {
-    console.log("Submitting Plant:", data);
+    const fullData = { ...data, description };
+    console.log("Submitting Plant:", fullData);
     toast.success("Plant added successfully!");
     reset();
+    setDescription("");
     setPreviewImage(null);
   };
 
@@ -40,7 +45,7 @@ const AddPlants = () => {
 
   return (
     <div className="p-4">
-      {/* Header with back button */}
+      {/* Header */}
       <div className="flex items-center mb-6">
         <Link to="/plants" className="mr-4">
           <IoArrowBackOutline className="text-2xl" />
@@ -81,7 +86,7 @@ const AddPlants = () => {
           </label>
         </div>
 
-        {/* Form Fields */}
+        {/* Inputs */}
         <div className="border border-gray-300 rounded-xl p-6 pb-0 gap-6 mb-6">
           <div className="mb-6">
             <label htmlFor="name" className="block text-sm mb-1">
@@ -95,16 +100,18 @@ const AddPlants = () => {
             />
           </div>
 
-          <div className="mb-6 w-full">
+          {/* Rich Text Editor */}
+          <div className="mb-6 w-full rounded">
             <label htmlFor="description" className="block text-sm mb-1">
               Description
             </label>
-            <textarea
-              {...register("description")}
-              rows="6"
-              placeholder="Enter plant description"
-              className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-            ></textarea>
+            <ReactQuill
+              value={description}
+              onChange={setDescription}
+              theme="snow"
+              placeholder="Write your plant description here..."
+              className="bg-white rounded-lg"
+            />
           </div>
         </div>
 
