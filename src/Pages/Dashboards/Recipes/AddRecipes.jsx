@@ -20,8 +20,6 @@ const AddRecipes = () => {
     defaultValues: {
       name: "",
       image: null,
-      recipeLink: "",
-      linkTitle: "",
       description: "",
       category: "",
       tags: [{ value: "" }],
