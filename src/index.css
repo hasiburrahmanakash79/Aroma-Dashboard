@@ -11,15 +11,14 @@
 
 
 .quill-custom .ql-toolbar {
-  @apply rounded-t-xl bg-[#4CAF87] text-white;
+  @apply rounded-t-xl bg-[#4CAF87] text-black;
 }
 
 
 .quill-custom .ql-toolbar .ql-picker-label,
 .quill-custom .ql-toolbar .ql-stroke,
 .quill-custom .ql-toolbar .ql-fill {
-  color: white !important;
-  stroke: white !important;
+  color: black !important;
 }
 
 
