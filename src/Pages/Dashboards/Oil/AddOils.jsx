@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
-import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { useForm,  Controller } from "react-hook-form";
 import toast from "react-hot-toast";
 import {
   IoArrowBackOutline,
   IoCloudUploadOutline,
-  IoAdd,
   IoClose,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -14,21 +13,19 @@ import "react-quill/dist/quill.snow.css";
 
 const AddOils = () => {
   const [previewImage, setPreviewImage] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [description, setDescription] = useState("");
+  const [tagInput, setTagInput] = useState("");
+  const [tags, setTags] = useState([]);
 
   const plantOptions = [
-  { value: "almond", label: "Almond Plant" },
-  { value: "coconut", label: "Coconut Palm" },
-  { value: "olive", label: "Olive Tree" },
-  { value: "argan", label: "Argan Tree" },
-  { value: "jojoba", label: "Jojoba Shrub" },
-  { value: "castor", label: "Castor Plant" },
-  { value: "grapeseed", label: "Grapevine" },
-  { value: "mustard", label: "Mustard Plant" },
-  // ... aro plant name add kora jabe
-];
-
+    { value: "almond", label: "Almond Plant" },
+    { value: "coconut", label: "Coconut Palm" },
+    { value: "olive", label: "Olive Tree" },
+    { value: "argan", label: "Argan Tree" },
+    { value: "jojoba", label: "Jojoba Shrub" },
+    { value: "castor", label: "Castor Plant" },
+    { value: "grapeseed", label: "Grapevine" },
+    { value: "mustard", label: "Mustard Plant" },
+  ];
 
   const {
     register,
@@ -36,28 +33,28 @@ const AddOils = () => {
     control,
     reset,
     setValue,
+    formState: { isSubmitting },
   } = useForm({
     defaultValues: {
       name: "",
       image: null,
-      oilLink: "",
-      LinkTitle: "",
       description: "",
-      category: "",
-      tags: [{ value: "" }],
+      tags: [],
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "tags",
-  });
+  const onSubmit = (data) => {
+    data.tags = tags; // inject tags before submit
+    console.log("Submitting recipe:", data);
+    toast.success("Recipe added successfully!");
+    reset();
+    setPreviewImage(null);
+    setTags([]);
+  };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setValue("image", file);
-
       const reader = new FileReader();
       reader.onload = () => {
         setPreviewImage(reader.result);
@@ -66,25 +63,36 @@ const AddOils = () => {
     }
   };
 
-  const onSubmit = (data) => {
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Submitted data:", data);
-      setIsSubmitting(false);
-      toast.success("Oil added successfully!");
-      reset();
-      setPreviewImage(null);
-    }, 1000);
+  const handleKeyDown = (e) => {
+    if ((e.key === "Enter" || e.key === ",") && tagInput.trim()) {
+      e.preventDefault();
+      const newTag = tagInput.trim();
+      if (!tags.includes(newTag) && tags.length < 20) {
+        setTags([...tags, newTag]);
+        setTagInput("");
+      }
+    }
   };
+
+  const removeTag = (indexToRemove) => {
+    setTags(tags.filter((_, i) => i !== indexToRemove));
+  };
+
+  useEffect(() => {
+    setValue("tags", tags);
+  }, [tags, setValue]);
 
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],
       ["bold", "italic", "underline", "strike"],
-      [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
-      [{ align: [] },],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      [{ align: [] }],
       ["link", "image"],
     ],
   };
@@ -151,82 +159,86 @@ const AddOils = () => {
                 Plant Name
               </label>
               <Controller
-                              name="plant_name"
-                              control={control}
-                              rules={{ required: true }}
-                              render={({ field }) => (
-                                <Select
-                                  {...field}
-                                  options={plantOptions}
-                                  styles={{
-                                    control: (base) => ({
-                                      ...base,
-                                      padding: "6px",
-                                      borderRadius: "8px",
-                                      borderColor: "#d1d5db",
-                                      boxShadow: "none",
-                                    }),
-                                    menu: (base) => ({
-                                      ...base,
-                                      zIndex: 10,
-                                    }),
-                                  }}
-                                />
-                              )}
-                            />
+                name="plant_name"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    options={plantOptions}
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        padding: "6px",
+                        borderRadius: "8px",
+                        borderColor: "#d1d5db",
+                        boxShadow: "none",
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        zIndex: 10,
+                      }),
+                    }}
+                  />
+                )}
+              />
             </div>
           </div>
 
           {/* Rich Text Editor */}
-                    <div className="mb-6 w-full rounded">
-                      <label htmlFor="description" className="block text-sm mb-1">
-                        Description
-                      </label>
-                      <ReactQuill
-                      //   {...register("description", { required: true })}
-                        value={description}
-                        onChange={setDescription}
-                        theme="snow"
-                        modules={modules}
-                        placeholder="Write your oil description here..."
-                        className="quill-custom"
-                      />
-                    </div>
+          <div className="mb-6 w-full rounded">
+            <label htmlFor="description" className="block text-sm mb-1">
+              Description
+            </label>
+            <Controller
+              name="description"
+              control={control}
+              rules={{ required: "Description is required" }}
+              render={({ field }) => (
+                <ReactQuill
+                  {...field}
+                  theme="snow"
+                  modules={modules}
+                  placeholder="Write your plant description here..."
+                  className="quill-custom"
+                />
+              )}
+            />
+          </div>
 
-          {/* Tags */}
+          {/* Tag Input */}
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">Add Tags</label>
-            <div className="space-y-3">
-              {fields.map((field, index) => (
-                <div key={field.id} className="flex items-center gap-5">
-                  <input
-                    {...register(`tags.${index}.value`, { required: true })}
-                    type="text"
-                    placeholder={`Tag ${index + 1}`}
-                    className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-                  />
-                  {fields.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => remove(index)}
-                      className="text-red-500 text-lg"
-                    >
-                      <IoClose />
-                    </button>
-                  )}
-                  {index === fields.length - 1 && (
-                    <button
-                      type="button"
-                      onClick={() => append({ value: "" })}
-                      className="text-xl p-3 border border-gray-300 rounded-lg outline-none"
-                      title="Add Tag"
-                    >
-                      <IoAdd />
-                    </button>
-                  )}
-                </div>
+            <label className="block text-sm font-medium mb-2">
+              Add Tags (max 20)
+            </label>
+
+            <div className="flex flex-wrap gap-2 mb-3">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="flex items-center gap-1 bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full"
+                >
+                  {tag}
+                  <button
+                    type="button"
+                    onClick={() => removeTag(index)}
+                    className="hover:text-red-500"
+                    title="Remove tag"
+                  >
+                    <IoClose />
+                  </button>
+                </span>
               ))}
             </div>
+
+            <input
+              type="text"
+              value={tagInput}
+              onChange={(e) => setTagInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Type a tag and press Enter or Comma"
+              className="w-full p-3 border border-gray-300 rounded-lg outline-none"
+            />
           </div>
         </div>
 
@@ -235,7 +247,7 @@ const AddOils = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="py-3 bg-[#7BC9AC] hover:bg-[#3B9C79] text-white font-medium rounded-lg transition duration-500 w-62"
+            className="py-3 bg-[#7BC9AC] hover:bg-[#3B9C79] text-white font-medium rounded-lg transition duration-300 w-62"
           >
             {isSubmitting ? "Saving..." : "Save"}
           </button>
