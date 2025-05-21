@@ -1,27 +1,43 @@
 import { useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
+import ReactQuill from "react-quill";
 import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
+  const [description, setDescription] = useState("");
 
   const [formData, setFormData] = useState({
     terms:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.",
   });
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      terms: e.target.value,
-    }));
+  const handleEditClick = () => {
+    setDescription(formData.terms); // 🟢 Load old data into editor
+    setIsEditing(true);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData((prev) => ({ ...prev, terms: description })); // 🟢 Save updated text
     setIsEditing(false);
-    console.log(formData); // API call here
+    console.log("Saved data:", description); // API call here
+  };
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],
+      ["bold", "italic", "underline", "strike"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      [{ align: [] }],
+      ["link", "image"],
+    ],
   };
 
   return (
@@ -42,7 +58,7 @@ const AboutUs = () => {
         {!isEditing && (
           <button
             type="button"
-            onClick={() => setIsEditing(true)}
+            onClick={handleEditClick}
             className="bg-[#328569] text-white py-2 px-4 rounded-full flex items-center gap-2"
           >
             ✎ Edit
@@ -57,10 +73,13 @@ const AboutUs = () => {
             {formData.terms}
           </p>
         ) : (
-          <textarea
-            value={formData.terms}
-            onChange={handleChange}
-            className="w-full min-h-[300px] border border-gray-300 rounded px-3 py-2 resize-y"
+          <ReactQuill
+            value={description}
+            onChange={setDescription}
+            theme="snow"
+            modules={modules}
+            placeholder="Write your privacy policy here..."
+            className="quill-custom"
           />
         )}
       </div>
