@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
+import Select from "react-select";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
 import toast from "react-hot-toast";
 import {
   IoArrowBackOutline,
@@ -15,6 +16,19 @@ const AddOils = () => {
   const [previewImage, setPreviewImage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [description, setDescription] = useState("");
+
+  const plantOptions = [
+  { value: "almond", label: "Almond Plant" },
+  { value: "coconut", label: "Coconut Palm" },
+  { value: "olive", label: "Olive Tree" },
+  { value: "argan", label: "Argan Tree" },
+  { value: "jojoba", label: "Jojoba Shrub" },
+  { value: "castor", label: "Castor Plant" },
+  { value: "grapeseed", label: "Grapevine" },
+  { value: "mustard", label: "Mustard Plant" },
+  // ... aro plant name add kora jabe
+];
+
 
   const {
     register,
@@ -136,19 +150,30 @@ const AddOils = () => {
               <label className="block text-sm font-medium mb-1">
                 Plant Name
               </label>
-              <select
-                {...register("category", { required: true })}
-                className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-              >
-                <option value="" disabled>
-                  Select a category
-                </option>
-                <option value="Olive Oil">Olive Oil</option>
-                <option value="Coconut Oil">Coconut Oil</option>
-                <option value="Sunflower Oil">Sunflower Oil</option>
-                <option value="Peanut Oil">Peanut Oil</option>
-                <option value="Almond Oil">Almond Oil</option>
-              </select>
+              <Controller
+                              name="plant_name"
+                              control={control}
+                              rules={{ required: true }}
+                              render={({ field }) => (
+                                <Select
+                                  {...field}
+                                  options={plantOptions}
+                                  styles={{
+                                    control: (base) => ({
+                                      ...base,
+                                      padding: "6px",
+                                      borderRadius: "8px",
+                                      borderColor: "#d1d5db",
+                                      boxShadow: "none",
+                                    }),
+                                    menu: (base) => ({
+                                      ...base,
+                                      zIndex: 10,
+                                    }),
+                                  }}
+                                />
+                              )}
+                            />
             </div>
           </div>
 
