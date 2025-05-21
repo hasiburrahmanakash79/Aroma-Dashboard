@@ -9,8 +9,28 @@ const AboutUs = () => {
   const [description, setDescription] = useState("");
 
   const [formData, setFormData] = useState({
-    terms:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro, suscipit at rem facilis libero laudantium, tenetur nisi omnis ducimus blanditiis quibusdam dolores fugiat nostrum dolore id. Perspiciatis pariatur inventore obcaecati illum odio perferendis dolore reiciendis officia sunt tenetur.",
+    terms: `
+      <p>
+      Welcome to <strong>Aroma Queen</strong>, your go-to destination for self-care, beauty, and wellness. 
+      Created with love for every queen out there, our mission is to inspire confidence and celebrate femininity 
+      through premium products and empowering content.
+    </p>
+    <p>
+      At Aroma Queen, we believe that every woman deserves to feel beautiful, inside and out. 
+      Whether you're browsing our curated collections of skincare, essential oils, or wellness accessories, 
+      or learning through our blog and tutorials — we’re here to support your journey toward holistic beauty.
+    </p>
+    <p>
+      As a proudly woman-focused platform, we blend the elegance of tradition with the convenience of modern 
+      e-commerce. Every product is handpicked with care, ensuring quality, purity, and purpose.
+    </p>
+    <p>
+      Join our community of queens and experience the magic of self-love, one drop of aroma at a time.
+    </p>
+    <p>
+      <em>Because you deserve nothing less than royal treatment.</em>
+    </p>
+      `,
   });
 
   const handleEditClick = () => {
@@ -60,7 +80,7 @@ const AboutUs = () => {
       <div className="p-5">
         {!isEditing ? (
           <div
-            className="text-gray-700 leading-7"
+            className="text-gray-700 leading-7 privacy-content"
             dangerouslySetInnerHTML={{ __html: formData.terms }}
           />
         ) : (
