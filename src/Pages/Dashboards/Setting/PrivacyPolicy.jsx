@@ -42,23 +42,20 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="border rounded-lg border-gray-300"
-    >
+    <form onSubmit={handleSubmit} className="border rounded-lg border-gray-300">
       {/* Header */}
       <div className="flex justify-between items-center border-b border-gray-300 p-5">
         <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => navigate(-1)}
-                    className="cursor-pointer"
-                    title="Go back"
-                  >
-                    <IoArrowBackOutline className="text-xl" />
-                  </button>
-                  <h2 className="font-semibold text-lg">Privacy Policy</h2>
-                </div>
-        
+          <button
+            onClick={() => navigate(-1)}
+            className="cursor-pointer"
+            title="Go back"
+          >
+            <IoArrowBackOutline className="text-xl" />
+          </button>
+          <h2 className="font-semibold text-lg">Privacy Policy</h2>
+        </div>
+
         {!isEditing && (
           <button
             type="button"
