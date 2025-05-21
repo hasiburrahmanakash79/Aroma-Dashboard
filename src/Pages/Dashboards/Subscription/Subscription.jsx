@@ -1,10 +1,8 @@
-import { IoCheckmarkCircleSharp } from "react-icons/io5";
-import CommonBar from "../../../components/Common/CommonBar";
-import { Link } from "react-router-dom";
+import { IoArrowBackOutline, IoCheckmarkCircleSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Subscription = () => {
-  const currentRoute =
-    location.pathname.split("/").filter(Boolean).pop() || "Dashboard";
+  const navigate = useNavigate();
 
   const plans = [
     {
@@ -50,7 +48,16 @@ const Subscription = () => {
 
   return (
     <div className="p-4">
-      <CommonBar currentRoute={currentRoute} />
+      <div className="flex items-center gap-2 mb-6">
+              <button
+                onClick={() => navigate(-1)}
+                className="cursor-pointer"
+                title="Go back"
+              >
+                <IoArrowBackOutline className="text-2xl" />
+              </button>
+              <h1 className="text-2xl font-semibold">Subscription</h1>
+            </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {plans.map((plan) => (
@@ -72,14 +79,14 @@ const Subscription = () => {
               ))}
             </ul>
 
-            <div className="w-full mt-5">
+            {/* <div className="w-full mt-5">
               <Link
                 to={`/subscription/update/${plan.id}`}
-                className="block w-full text-center px-4 py-2 bg-[#3b9c787e] text-white rounded-lg"
+                className="block w-full text-center px-4 py-2 bg-[#328569] text-white rounded-lg"
               >
                 Edit
               </Link>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

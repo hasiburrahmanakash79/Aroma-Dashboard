@@ -91,12 +91,12 @@ const Dashboard = () => {
       icon: iconMappings.Course,
       role: "admin",
     },
-    {
-      title: "Categories",
-      path: "/categories",
-      icon: iconMappings.Categories,
-      role: "admin",
-    },
+    // {
+    //   title: "Categories",
+    //   path: "/categories",
+    //   icon: iconMappings.Categories,
+    //   role: "admin",
+    // },
     {
       title: "Advertising Space",
       path: "/advertising",

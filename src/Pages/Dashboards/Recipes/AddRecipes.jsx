@@ -7,6 +7,7 @@ import {
   IoAdd,
   IoCloudUploadOutline,
 } from "react-icons/io5";
+import ReactQuill from "react-quill";
 import { Link } from "react-router-dom";
 
 const AddRecipes = () => {
@@ -32,6 +33,7 @@ const AddRecipes = () => {
   });
 
   const [previewImage, setPreviewImage] = useState(null);
+  const [description, setDescription] = useState("");
 
   const onSubmit = (data) => {
     console.log("Submitting recipe:", data);
@@ -49,6 +51,16 @@ const AddRecipes = () => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+      [{ align: [] },],
+      ["link", "image"],
+    ],
   };
 
   return (
@@ -128,12 +140,15 @@ const AddRecipes = () => {
             <label htmlFor="description" className="block text-sm mb-1">
               Description
             </label>
-            <textarea
-              {...register("description")}
-              rows="6"
-              placeholder="Enter recipe description"
-              className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-            ></textarea>
+            <ReactQuill
+                        //   {...register("description", { required: true })}
+                          value={description}
+                          onChange={setDescription}
+                          theme="snow"
+                          modules={modules}
+                          placeholder="Write your plant description here..."
+                          className="quill-custom"
+                        />
           </div>
 
          {/* Tags */}
