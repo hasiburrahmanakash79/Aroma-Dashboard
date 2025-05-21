@@ -42,6 +42,7 @@ const AddPlants = () => {
       reader.readAsDataURL(file);
     }
   };
+  
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],

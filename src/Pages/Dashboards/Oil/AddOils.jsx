@@ -8,10 +8,13 @@ import {
   IoClose,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const AddOils = () => {
   const [previewImage, setPreviewImage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [description, setDescription] = useState("");
 
   const {
     register,
@@ -60,6 +63,16 @@ const AddOils = () => {
       reset();
       setPreviewImage(null);
     }, 1000);
+  };
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+      [{ align: [] },],
+      ["link", "image"],
+    ],
   };
 
   return (
@@ -121,7 +134,7 @@ const AddOils = () => {
 
             <div>
               <label className="block text-sm font-medium mb-1">
-                Oil Category
+                Plant Name
               </label>
               <select
                 {...register("category", { required: true })}
@@ -139,18 +152,21 @@ const AddOils = () => {
             </div>
           </div>
 
-          {/* Description */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium mb-1">
-              Oil Description
-            </label>
-            <textarea
-              {...register("description", { required: true })}
-              placeholder="Enter a description"
-              rows="6"
-              className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-            ></textarea>
-          </div>
+          {/* Rich Text Editor */}
+                    <div className="mb-6 w-full rounded">
+                      <label htmlFor="description" className="block text-sm mb-1">
+                        Description
+                      </label>
+                      <ReactQuill
+                      //   {...register("description", { required: true })}
+                        value={description}
+                        onChange={setDescription}
+                        theme="snow"
+                        modules={modules}
+                        placeholder="Write your oil description here..."
+                        className="quill-custom"
+                      />
+                    </div>
 
           {/* Tags */}
           <div className="mb-6">
