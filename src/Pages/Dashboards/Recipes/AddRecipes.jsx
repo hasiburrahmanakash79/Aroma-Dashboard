@@ -1,11 +1,10 @@
 import Select from "react-select";
-import { useState } from "react";
-import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useForm, Controller } from "react-hook-form";
 import toast from "react-hot-toast";
 import {
   IoArrowBackOutline,
   IoClose,
-  IoAdd,
   IoCloudUploadOutline,
 } from "react-icons/io5";
 import ReactQuill from "react-quill";
@@ -21,37 +20,36 @@ const AddRecipes = () => {
     { value: "castor", label: "Castor Oil" },
     { value: "grapeseed", label: "Grapeseed Oil" },
     { value: "mustard", label: "Mustard Oil" },
-    // ... aro onek option add kora jabe
   ];
+
   const {
     register,
     handleSubmit,
     control,
     reset,
+    setValue,
     formState: { isSubmitting },
   } = useForm({
     defaultValues: {
       name: "",
       image: null,
       description: "",
-      category: "",
-      tags: [{ value: "" }],
+      tags: [],
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "tags",
-  });
-
   const [previewImage, setPreviewImage] = useState(null);
-  const [description, setDescription] = useState("");
+
+  const [tagInput, setTagInput] = useState("");
+  const [tags, setTags] = useState([]);
 
   const onSubmit = (data) => {
+    data.tags = tags; // inject tags before submit
     console.log("Submitting recipe:", data);
     toast.success("Recipe added successfully!");
     reset();
     setPreviewImage(null);
+    setTags([]);
   };
 
   const handleImageUpload = (e) => {
@@ -64,6 +62,25 @@ const AddRecipes = () => {
       reader.readAsDataURL(file);
     }
   };
+
+  const handleKeyDown = (e) => {
+    if ((e.key === "Enter" || e.key === ",") && tagInput.trim()) {
+      e.preventDefault();
+      const newTag = tagInput.trim();
+      if (!tags.includes(newTag) && tags.length < 20) {
+        setTags([...tags, newTag]);
+        setTagInput("");
+      }
+    }
+  };
+
+  const removeTag = (indexToRemove) => {
+    setTags(tags.filter((_, i) => i !== indexToRemove));
+  };
+
+  useEffect(() => {
+    setValue("tags", tags);
+  }, [tags, setValue]);
 
   const modules = {
     toolbar: [
@@ -82,7 +99,6 @@ const AddRecipes = () => {
 
   return (
     <div className="p-4">
-      {/* Header with back button */}
       <div className="flex items-center mb-6">
         <Link to="/Recipe" className="mr-4">
           <IoArrowBackOutline className="text-2xl" />
@@ -90,7 +106,6 @@ const AddRecipes = () => {
         <h1 className="text-2xl font-semibold">Add Recipe</h1>
       </div>
 
-      {/* Form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full mx-auto p-6 border border-gray-300 rounded-xl"
@@ -140,87 +155,88 @@ const AddRecipes = () => {
             <div className="mb-4">
               <label className="block text-sm mb-1">Oil Name</label>
               <Controller
-  name="oil_name"
-  control={control}
-  rules={{ required: true }}
-  render={({ field }) => (
-    <Select
-      {...field}
-      isMulti                         // ✅ Enable multiple select
-      options={oilOptions}
-      styles={{
-        control: (base) => ({
-          ...base,
-          padding: '6px',
-          borderRadius: '8px',
-          borderColor: '#d1d5db',
-          boxShadow: 'none',
-        }),
-        menu: (base) => ({
-          ...base,
-          zIndex: 10,
-        }),
-      }}
-    />
-  )}
-/>
-              
+                name="oil_name"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    isMulti
+                    options={oilOptions}
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        padding: "6px",
+                        borderRadius: "8px",
+                        borderColor: "#d1d5db",
+                        boxShadow: "none",
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        zIndex: 10,
+                      }),
+                    }}
+                  />
+                )}
+              />
             </div>
           </div>
-
           <div className="mb-6 w-full">
             <label htmlFor="description" className="block text-sm mb-1">
               Description
             </label>
-            <ReactQuill
-              //   {...register("description", { required: true })}
-              value={description}
-              onChange={setDescription}
-              theme="snow"
-              modules={modules}
-              placeholder="Write your plant description here..."
-              className="quill-custom"
+            <Controller
+              name="description"
+              control={control}
+              rules={{ required: "Description is required" }}
+              render={({ field }) => (
+                <ReactQuill
+                  {...field}
+                  theme="snow"
+                  modules={modules}
+                  placeholder="Write your plant description here..."
+                  className="quill-custom"
+                />
+              )}
             />
           </div>
 
-          {/* Tags */}
+          {/* Tag Input */}
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">Add Tags</label>
-            <div className="space-y-3">
-              {fields.map((field, index) => (
-                <div key={field.id} className="flex items-center gap-5">
-                  <input
-                    {...register(`tags.${index}.value`, { required: true })}
-                    type="text"
-                    placeholder={`Tag ${index + 1}`}
-                    className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-                  />
-                  {fields.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => remove(index)}
-                      className="text-red-500 text-lg"
-                    >
-                      <IoClose />
-                    </button>
-                  )}
-                  {index === fields.length - 1 && (
-                    <button
-                      type="button"
-                      onClick={() => append({ value: "" })}
-                      className="text-xl p-3 border border-gray-300 rounded-lg outline-none"
-                      title="Add Tag"
-                    >
-                      <IoAdd />
-                    </button>
-                  )}
-                </div>
+            <label className="block text-sm font-medium mb-2">
+              Add Tags (max 20)
+            </label>
+
+            <div className="flex flex-wrap gap-2 mb-3">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="flex items-center gap-1 bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full"
+                >
+                  {tag}
+                  <button
+                    type="button"
+                    onClick={() => removeTag(index)}
+                    className="hover:text-red-500"
+                    title="Remove tag"
+                  >
+                    <IoClose />
+                  </button>
+                </span>
               ))}
             </div>
+
+            <input
+              type="text"
+              value={tagInput}
+              onChange={(e) => setTagInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Type a tag and press Enter or Comma"
+              className="w-full p-3 border border-gray-300 rounded-lg outline-none"
+            />
           </div>
         </div>
 
-        {/* Submit Button */}
         <div className="flex justify-end">
           <button
             type="submit"
@@ -236,48 +252,3 @@ const AddRecipes = () => {
 };
 
 export default AddRecipes;
-
-
-
-
-
-{/* Tags */}
-//           <div className="mb-6">
-//             <label className="block text-sm font-medium mb-2">Add Tags</label>
-//             <div className="space-y-3">
-//               {fields.map((field, index) => (
-//                 <div key={field.id} className="flex items-center gap-5">
-//                   <input
-//                     {...register(`tags.${index}.value`, { required: true })}
-//                     type="text"
-//                     placeholder={`Tag ${index + 1}`}
-//                     className="w-full p-3 border border-gray-300 rounded-lg outline-none"
-//                   />
-//                   {fields.length > 1 && (
-//                     <button
-//                       type="button"
-//                       onClick={() => remove(index)}
-//                       className="text-red-500 text-lg"
-//                     >
-//                       <IoClose />
-//                     </button>
-//                   )}
-//                   {index === fields.length - 1 && (
-//                     <button
-//                       type="button"
-//                       onClick={() => append({ value: "" })}
-//                       className="text-xl p-3 border border-gray-300 rounded-lg outline-none"
-//                       title="Add Tag"
-//                     >
-//                       <IoAdd />
-//                     </button>
-//                   )}
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-
-
-// ekhane dekhte parteso plus button e click korle aro ekti tag field add hocche abar seyta remove korau jacche. but amu ekhon chacchilam ekti input filed e thakbe just ami multiple tag add korte parbo sorboccho 20 ta tag add korte parbo. abar chaile kono stage remove korar jonno tag er pashe cross icon o thakbe.amar multiple input field lagbe na. multipul tag jate input dite pari seyta lagbe. 
-
-// like fiverr skill add, LinkedIn skill add
