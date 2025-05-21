@@ -44,10 +44,10 @@ const AddPlants = () => {
   };
   const modules = {
     toolbar: [
-      [{ header: [1, 2, 3, 4, 5, false] }],
-      ["bold", "italic", "underline"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      [{ align: [] }],
+      [{ header: [1, 2, 3, 4, 5, false] }, { font: [] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
+      [{ align: [] },],
       ["link", "image"],
     ],
   };
