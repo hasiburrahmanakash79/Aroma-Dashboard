@@ -1,10 +1,12 @@
 import { useState } from "react";
 import {
   IoAlertCircleOutline,
+  IoArrowBackOutline,
   IoChevronBackOutline,
   IoChevronForwardOutline,
 } from "react-icons/io5";
 import CommonModal from "../../../components/Common/CommonModal";
+import { useNavigate } from "react-router-dom";
 
 // import React from 'react';
 const history = [
@@ -133,6 +135,7 @@ const history = [
 const HISTORY_PER_PAGE = 12;
 
 const TransactionHistory = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [goTo, setGoTo] = useState("");
   const [selectedData, setSelectedData] = useState(null); // ✅ selected transaction
@@ -197,7 +200,16 @@ const TransactionHistory = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-5">Transaction History</h1>
+      <div className="flex items-center gap-2 mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="cursor-pointer"
+          title="Go back"
+        >
+          <IoArrowBackOutline className="text-2xl" />
+        </button>
+        <h1 className="text-2xl font-semibold">Transaction History</h1>
+      </div>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-center">

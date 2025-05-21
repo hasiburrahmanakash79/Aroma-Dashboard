@@ -1,10 +1,10 @@
 import { IoArrowBackOutline, IoChevronForwardSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CommonModal from "../../../components/Common/CommonModal";
 
 const Setting = () => {
-
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     currentPassword: "",
@@ -28,10 +28,14 @@ const Setting = () => {
   return (
     <div className="p-4">
       {/* Header with back button */}
-      <div className="flex items-center mb-6">
-        <Link to="/" className="mr-4">
+      <div className="flex items-center gap-2 mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="cursor-pointer"
+          title="Go back"
+        >
           <IoArrowBackOutline className="text-2xl" />
-        </Link>
+        </button>
         <h1 className="text-2xl font-semibold">Setting</h1>
       </div>
       <div className="border border-gray-300 rounded-2xl">
