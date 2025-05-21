@@ -8,7 +8,7 @@ import {
 import CommonModal from "../../../components/Common/CommonModal";
 import { useNavigate } from "react-router-dom";
 
-// import React from 'react';
+
 const history = [
   {
     id: "#JK8j9MT4",
@@ -60,8 +60,8 @@ const TransactionHistory = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [goTo, setGoTo] = useState("");
-  const [selectedData, setSelectedData] = useState(null); // ✅ selected transaction
-  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ modal state
+  const [selectedData, setSelectedData] = useState(null); // selected transaction
+  const [isModalOpen, setIsModalOpen] = useState(false); // modal state
 
   const totalPages = Math.ceil(history.length / HISTORY_PER_PAGE);
 
@@ -199,7 +199,7 @@ const TransactionHistory = () => {
         </div>
       </div>
 
-      {/* ✅ Modal Usage */}
+      {/* Modal Usage */}
       <CommonModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}

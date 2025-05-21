@@ -54,24 +54,15 @@ const AboutUs = () => {
           </button>
           <h2 className="font-semibold text-lg">About Us</h2>
         </div>
-
-        {!isEditing && (
-          <button
-            type="button"
-            onClick={handleEditClick}
-            className="bg-[#328569] text-white py-2 px-4 rounded-full flex items-center gap-2"
-          >
-            ✎ Edit
-          </button>
-        )}
       </div>
 
       {/* Body */}
       <div className="p-5">
         {!isEditing ? (
-          <p className="text-gray-700 whitespace-pre-line leading-7">
-            {formData.terms}
-          </p>
+          <div
+            className="text-gray-700 leading-7"
+            dangerouslySetInnerHTML={{ __html: formData.terms }}
+          />
         ) : (
           <ReactQuill
             value={description}
@@ -84,14 +75,25 @@ const AboutUs = () => {
         )}
       </div>
 
-      {/* Save Button */}
+      {/* Edit and Update Button */}
+      {!isEditing && (
+        <div className="flex justify-end px-5 pb-5">
+          <button
+            type="button"
+            onClick={handleEditClick}
+            className="bg-[#328569] text-white py-2 px-6 rounded-full"
+          >
+            ✎ Edit
+          </button>
+        </div>
+      )}
       {isEditing && (
         <div className="flex justify-end px-5 pb-5">
           <button
             type="submit"
-            className="bg-[#328569] text-white px-6 py-2 rounded-lg"
+            className="bg-[#328569] text-white px-6 py-2 rounded-full"
           >
-            Save Info
+            Update Info
           </button>
         </div>
       )}

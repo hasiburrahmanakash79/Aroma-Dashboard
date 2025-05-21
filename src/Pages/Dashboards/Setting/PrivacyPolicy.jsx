@@ -56,15 +56,6 @@ const PrivacyPolicy = () => {
           <h2 className="font-semibold text-lg">Privacy Policy</h2>
         </div>
 
-        {!isEditing && (
-          <button
-            type="button"
-            onClick={handleEditClick}
-            className="bg-[#328569] text-white py-2 px-4 rounded-full flex items-center gap-2"
-          >
-            ✎ Edit
-          </button>
-        )}
       </div>
 
       {/* Body */}
@@ -86,13 +77,25 @@ const PrivacyPolicy = () => {
         )}
       </div>
 
+      {/* Edit and Update Button */}
+      {!isEditing && (
+        <div className="flex justify-end px-5 pb-5">
+          <button
+            type="button"
+            onClick={handleEditClick}
+            className="bg-[#328569] text-white py-2 px-6 rounded-full"
+          >
+            ✎ Edit
+          </button>
+        </div>
+      )}
       {isEditing && (
         <div className="flex justify-end px-5 pb-5">
           <button
             type="submit"
-            className="bg-[#328569] text-white px-6 py-2 rounded-lg"
+            className="bg-[#328569] text-white px-6 py-2 rounded-full"
           >
-            Save Info
+            Update Info
           </button>
         </div>
       )}
