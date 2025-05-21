@@ -121,9 +121,9 @@ const AddRecipes = () => {
               />
             </div>
             <div>
-              <label className="block text-sm mb-1">Recipe Category</label>
+              <label className="block text-sm mb-1">Oil Name</label>
               <select
-                {...register("category", { required: true })}
+                {...register("oil_name", { required: true })}
                 className="w-full p-3 border border-gray-300 rounded-lg outline-none"
               >
                 <option value="">Select a category</option>

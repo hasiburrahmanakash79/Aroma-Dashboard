@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CommonBar from "../../../components/Common/CommonBar";
 import AdvertisingSpaces from "./AdvertisingSpaces";
 const AdvertisingSpace = () => {
@@ -18,7 +18,7 @@ const AdvertisingSpace = () => {
               className="w-full h-48 object-cover"
             />
             <div className="pt-3">
-              <h1 className="text-xl font-bold">{advertisingSpace.name}</h1>
+              <Link to='/advertising' className="text-xl font-bold">{advertisingSpace.name}</Link>
             </div>
           </div>
         ))}
