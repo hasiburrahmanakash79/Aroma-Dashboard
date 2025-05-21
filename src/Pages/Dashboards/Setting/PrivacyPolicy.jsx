@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { IoArrowBackOutline } from "react-icons/io5";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [description, setDescription] = useState("");
 
@@ -45,7 +48,17 @@ const PrivacyPolicy = () => {
     >
       {/* Header */}
       <div className="flex justify-between items-center border-b border-gray-300 p-5">
-        <h2 className="font-semibold text-lg">Privacy Policy</h2>
+        <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => navigate(-1)}
+                    className="cursor-pointer"
+                    title="Go back"
+                  >
+                    <IoArrowBackOutline className="text-xl" />
+                  </button>
+                  <h2 className="font-semibold text-lg">Privacy Policy</h2>
+                </div>
+        
         {!isEditing && (
           <button
             type="button"
