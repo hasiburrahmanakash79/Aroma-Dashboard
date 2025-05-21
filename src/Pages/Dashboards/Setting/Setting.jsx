@@ -85,13 +85,14 @@ const Setting = () => {
         </div>
       </div>
 
-      {/* ✅ Change Password Modal */}
+      {/* Change Password Modal */}
       <CommonModal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         title="Change Password"
       >
-        <div className="space-y-4 mt-4">
+        <p className="mb-5 text-center">Your password must be 8-10 character long.</p>
+        <div className="space-y-4 ">
           <label className="block mb-1">Current Password</label>
           <input
             type="password"
@@ -120,9 +121,9 @@ const Setting = () => {
           <div className="text-right">
             <button
               onClick={handleSave}
-              className="bg-[#328569] text-white px-6 py-2 rounded-lg mt-2"
+              className="bg-[#328569] text-white px-6 py-2 rounded-full mt-2"
             >
-              Save
+              Update Password
             </button>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoArrowBackOutline } from "react-icons/io5";
 import CommonModal from "../../../components/Common/CommonModal"; // Update this path as needed
 
 const Categories = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("Gesundheit");
 
   const [showModal, setShowModal] = useState(false);
@@ -38,15 +39,19 @@ const Categories = () => {
   return (
     <div className="p-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center mb-5">
-          <Link to="/" className="mr-4">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => navigate(-1)}
+            className="cursor-pointer"
+            title="Go back"
+          >
             <IoArrowBackOutline className="text-2xl" />
-          </Link>
-          <h1 className="text-2xl font-semibold">Categories</h1>
+          </button>
+          <h2 className="font-semibold text-2xl">Categories</h2>
         </div>
         <button
           onClick={() => setShowModal(true)}
-          className="px-4 py-2 rounded-lg text-sm bg-[#3B9C79] hover:shadow-xl text-white cursor-pointer transition"
+          className="px-4 py-2 rounded-full text-sm bg-[#3B9C79] hover:shadow-xl text-white cursor-pointer transition"
         >
           Add Categories
         </button>
@@ -90,7 +95,7 @@ const Categories = () => {
           <div className="text-right">
             <button
               onClick={handleAddCategory}
-              className="bg-[#3B9C79] text-white px-6 py-2 rounded-lg"
+              className="bg-[#3B9C79] text-white px-6 py-2 rounded-full"
             >
               Save
             </button>

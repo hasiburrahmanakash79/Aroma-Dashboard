@@ -25,10 +25,10 @@ const CommonBar = ({ currentRoute }) => {
           {currentRoute.replace(/-/g, " ")}
         </span>
       </div>
-      <div className="flex  ">
+      <div className="">
         <Link
           to={getAddButtonPath()}
-          className="px-4 py-2 rounded-lg text-sm bg-[#3B9C79] hover:shadow-xl text-white cursor-pointer transition"
+          className="px-4 py-2 rounded-full text-sm bg-[#3B9C79] hover:shadow-xl text-white cursor-pointer transition"
         >
           {getAddButtonText()}
         </Link>
